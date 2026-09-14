@@ -3,6 +3,7 @@ package screenshot
 import (
 	"math"
 
+	"github.com/AvengeMedia/DankMaterialShell/core/internal/wayland/keymap"
 	"github.com/AvengeMedia/dankgo/wayland/client"
 )
 
@@ -16,6 +17,12 @@ func (r *RegionSelector) setupInput() {
 			if pointer, err := r.seat.GetPointer(); err == nil {
 				r.pointer = pointer
 				r.setupPointerHandlers()
+			}
+		}
+		if e.Capabilities&uint32(client.SeatCapabilityTouch) != 0 && r.touch == nil {
+			if touch, err := r.seat.GetTouch(); err == nil {
+				r.touch = touch
+				r.setupTouchHandlers()
 			}
 		}
 		if e.Capabilities&uint32(client.SeatCapabilityKeyboard) != 0 && r.keyboard == nil {
@@ -58,7 +65,15 @@ func (r *RegionSelector) setupPointerHandlers() {
 		r.pointerX = e.SurfaceX
 		r.pointerY = e.SurfaceY
 
+		if r.phase == phaseScroll {
+			r.refreshCursor()
+			return
+		}
+
 		if !r.selection.dragging {
+			if r.ctrlHeld && r.selection.hasSelection {
+				r.refreshCursor()
+			}
 			return
 		}
 
@@ -75,7 +90,7 @@ func (r *RegionSelector) setupPointerHandlers() {
 				return
 			}
 			switch r.scrollBarHit(r.pointerX, r.pointerY) {
-			case "done":
+			case "done", "preview":
 				r.finishScroll()
 			case "cancel":
 				r.cancelled = true
@@ -90,14 +105,23 @@ func (r *RegionSelector) setupPointerHandlers() {
 			case 1: // pressed
 				pointerX := r.pointerX + float64(r.activeSurface.output.x)
 				pointerY := r.pointerY + float64(r.activeSurface.output.y)
-				if r.ctrlHeld && r.beginSelectionMove(pointerX, pointerY) {
-					r.selection.dragging = true
-					r.refreshCursor()
-					break
+				if r.ctrlHeld && r.selection.hasSelection {
+					if handle := r.resizeHandleAt(pointerX, pointerY); handle != handleNone {
+						if r.beginSelectionResize(handle, pointerX, pointerY) {
+							r.refreshCursor()
+							break
+						}
+					}
+					if r.beginSelectionMove(pointerX, pointerY) {
+						r.selection.dragging = true
+						r.refreshCursor()
+						break
+					}
 				}
 
 				r.preSelect = Region{}
 				r.movingSelection = false
+				r.resizingHandle = handleNone
 				r.selection.hasSelection = true
 				r.selection.dragging = true
 				r.selection.surface = r.activeSurface
@@ -112,6 +136,7 @@ func (r *RegionSelector) setupPointerHandlers() {
 			case 0: // released
 				r.selection.dragging = false
 				r.movingSelection = false
+				r.resizingHandle = handleNone
 				r.refreshCursor()
 				for _, os := range r.surfaces {
 					r.redrawSurface(os)
@@ -125,6 +150,143 @@ func (r *RegionSelector) setupPointerHandlers() {
 			r.running = false
 		}
 	})
+}
+
+func (r *RegionSelector) setupTouchHandlers() {
+	r.touch.SetDownHandler(func(e client.TouchDownEvent) {
+		r.handleTouchDown(e.Surface, e.Id, e.X, e.Y)
+	})
+
+	r.touch.SetMotionHandler(func(e client.TouchMotionEvent) {
+		r.handleTouchMotion(e.Id, e.X, e.Y)
+	})
+
+	r.touch.SetUpHandler(func(e client.TouchUpEvent) {
+		r.handleTouchUp(e.Id)
+	})
+
+	r.touch.SetCancelHandler(func(e client.TouchCancelEvent) {
+		r.handleTouchCancel()
+	})
+}
+
+func (r *RegionSelector) handleTouchDown(surface *client.Surface, touchId int32, x, y float64) {
+	if r.hasTouchPoint {
+		return
+	}
+
+	r.activeSurface = nil
+	for _, os := range r.surfaces {
+		if os.wlSurface != nil && surface != nil && os.wlSurface.ID() == surface.ID() {
+			r.activeSurface = os
+			break
+		}
+	}
+
+	if r.activeSurface == nil {
+		return
+	}
+
+	r.hasTouchPoint = true
+	r.touchPointId = touchId
+
+	if r.phase == phaseScroll {
+		if r.activeSurface != r.selection.surface {
+			return
+		}
+		switch r.scrollBarHit(x, y) {
+		case "done", "preview":
+			r.finishScroll()
+		case "cancel":
+			r.cancelled = true
+			r.running = false
+		}
+		return
+	}
+
+	touchX := x + float64(r.activeSurface.output.x)
+	touchY := y + float64(r.activeSurface.output.y)
+
+	if r.ctrlHeld && r.selection.hasSelection {
+		if handle := r.resizeHandleAt(touchX, touchY); handle != handleNone {
+			if r.beginSelectionResize(handle, touchX, touchY) {
+				return
+			}
+		}
+		if r.beginSelectionMove(touchX, touchY) {
+			r.selection.dragging = true
+			return
+		}
+	}
+
+	r.preSelect = Region{}
+	r.movingSelection = false
+	r.resizingHandle = handleNone
+	r.selection.hasSelection = true
+	r.selection.dragging = true
+	r.selection.surface = r.activeSurface
+	r.selection.anchorX = touchX
+	r.selection.anchorY = touchY
+	r.selection.currentX = r.selection.anchorX
+	r.selection.currentY = r.selection.anchorY
+
+	for _, os := range r.surfaces {
+		r.redrawSurface(os)
+	}
+}
+
+func (r *RegionSelector) handleTouchMotion(touchId int32, x, y float64) {
+	if !r.hasTouchPoint || touchId != r.touchPointId || r.activeSurface == nil {
+		return
+	}
+
+	if r.phase == phaseScroll {
+		return
+	}
+
+	if !r.selection.dragging {
+		return
+	}
+
+	r.updateSelectionCurrent(r.activeSurface, x, y)
+}
+
+func (r *RegionSelector) handleTouchUp(touchId int32) {
+	if !r.hasTouchPoint || touchId != r.touchPointId {
+		return
+	}
+
+	r.hasTouchPoint = false
+	r.selection.dragging = false
+	r.movingSelection = false
+	r.resizingHandle = handleNone
+
+	if r.phase == phaseScroll {
+		return
+	}
+
+	for _, os := range r.surfaces {
+		r.redrawSurface(os)
+	}
+
+	if r.screenshoter != nil && r.screenshoter.config.NoConfirm && r.selection.hasSelection {
+		r.finishSelection()
+	}
+}
+
+func (r *RegionSelector) handleTouchCancel() {
+	if !r.hasTouchPoint {
+		return
+	}
+
+	r.hasTouchPoint = false
+	r.selection.dragging = false
+	r.movingSelection = false
+	r.resizingHandle = handleNone
+
+	for _, os := range r.surfaces {
+		r.redrawSurface(os)
+	}
 }
 
 func (r *RegionSelector) updateSelectionCurrent(os *OutputSurface, surfaceX, surfaceY float64) {
@@ -189,6 +351,87 @@ func surfaceClampBounds(os *OutputSurface) (minX, minY, maxX, maxY float64, ok b
 	maxX = minX + float64(os.logicalW) - epsilonX
 	maxY = minY + float64(os.logicalH) - epsilonY
 	return minX, minY, maxX, maxY, true
+}
+
+func (r *RegionSelector) resizeHandleAt(pointerX, pointerY float64) resizeHandle {
+	if !r.selection.hasSelection {
+		return handleNone
+	}
+
+	minX := math.Min(r.selection.anchorX, r.selection.currentX)
+	maxX := math.Max(r.selection.anchorX, r.selection.currentX)
+	minY := math.Min(r.selection.anchorY, r.selection.currentY)
+	maxY := math.Max(r.selection.anchorY, r.selection.currentY)
+
+	const maxDistSq = resizeHitRadius * resizeHitRadius
+
+	distSq := func(cx, cy float64) float64 {
+		dx := pointerX - cx
+		dy := pointerY - cy
+		return dx*dx + dy*dy
+	}
+
+	corners := []struct {
+		handle resizeHandle
+		cx, cy float64
+	}{
+		{handleTopLeft, minX, minY},
+		{handleTopRight, maxX, minY},
+		{handleBottomLeft, minX, maxY},
+		{handleBottomRight, maxX, maxY},
+	}
+
+	bestHandle := handleNone
+	bestDist := float64(maxDistSq + 1)
+
+	for _, c := range corners {
+		d := distSq(c.cx, c.cy)
+		if d <= maxDistSq && d < bestDist {
+			bestDist = d
+			bestHandle = c.handle
+		}
+	}
+
+	return bestHandle
+}
+
+func (r *RegionSelector) beginSelectionResize(handle resizeHandle, pointerX, pointerY float64) bool {
+	if !r.selection.hasSelection || handle == handleNone {
+		return false
+	}
+
+	minX := math.Min(r.selection.anchorX, r.selection.currentX)
+	maxX := math.Max(r.selection.anchorX, r.selection.currentX)
+	minY := math.Min(r.selection.anchorY, r.selection.currentY)
+	maxY := math.Max(r.selection.anchorY, r.selection.currentY)
+
+	switch handle {
+	case handleTopLeft:
+		r.selection.anchorX = maxX
+		r.selection.anchorY = maxY
+		r.selection.currentX = minX
+		r.selection.currentY = minY
+	case handleTopRight:
+		r.selection.anchorX = minX
+		r.selection.anchorY = maxY
+		r.selection.currentX = maxX
+		r.selection.currentY = minY
+	case handleBottomLeft:
+		r.selection.anchorX = maxX
+		r.selection.anchorY = minY
+		r.selection.currentX = minX
+		r.selection.currentY = maxY
+	case handleBottomRight:
+		r.selection.anchorX = minX
+		r.selection.anchorY = minY
+		r.selection.currentX = maxX
+		r.selection.currentY = maxY
+	}
+
+	r.resizingHandle = handle
+	r.movingSelection = false
+	r.selection.dragging = true
+	return true
 }
 
 func (r *RegionSelector) beginSelectionMove(pointerX, pointerY float64) bool {
@@ -318,50 +561,75 @@ func surfaceEpsilon(surface *OutputSurface) (float64, float64) {
 
 func (r *RegionSelector) setupKeyboardHandlers() {
 	r.keyboard.SetModifiersHandler(func(e client.KeyboardModifiersEvent) {
-		r.shiftHeld = e.ModsDepressed&1 != 0
-		r.ctrlHeld = e.ModsDepressed&4 != 0
-		r.altHeld = e.ModsDepressed&8 != 0
+		shift := e.ModsDepressed&1 != 0
+		ctrl := e.ModsDepressed&4 != 0
+		alt := e.ModsDepressed&8 != 0
+		changed := shift != r.shiftHeld || ctrl != r.ctrlHeld
+		r.shiftHeld = shift
+		r.ctrlHeld = ctrl
+		r.altHeld = alt
 		r.refreshCursor()
-	})
-
-	r.keyboard.SetKeyHandler(func(e client.KeyboardKeyEvent) {
-		switch e.Key {
-		case 29, 97: // Ctrl left/right
-			r.ctrlHeld = e.State != 0
-			r.refreshCursor()
-		case 56, 100: // Alt left/right
-			r.altHeld = e.State != 0
-		}
-		if e.State != 1 {
-			return
-		}
-
-		if r.phase == phaseScroll {
-			switch e.Key {
-			case 1:
-				r.cancelled = true
-				r.running = false
-			case 28, 96:
-				r.finishScroll()
-			}
-			return
-		}
-
-		switch e.Key {
-		case 1:
-			r.cancelled = true
-			r.running = false
-		case 25:
-			r.showCapturedCursor = !r.showCapturedCursor
+		if changed && r.selection.hasSelection {
 			for _, os := range r.surfaces {
 				r.redrawSurface(os)
 			}
-		case 28, 57, 96:
-			if r.selection.hasSelection {
-				r.finishSelection()
-			}
 		}
 	})
+
+	r.keyboard.SetKeymapHandler(func(e client.KeyboardKeymapEvent) {
+		r.keymap = keymap.FromEvent(e)
+	})
+
+	r.keyboard.SetKeyHandler(func(e client.KeyboardKeyEvent) {
+		r.handleKey(r.keymap.Keysym(e.Key), e.State)
+	})
+}
+
+func (r *RegionSelector) handleKey(sym string, state uint32) {
+	held := state != 0
+	switch sym {
+	case "Control_L", "Control_R":
+		if held != r.ctrlHeld {
+			r.ctrlHeld = held
+			r.refreshCursor()
+			if r.selection.hasSelection {
+				for _, os := range r.surfaces {
+					r.redrawSurface(os)
+				}
+			}
+		}
+	case "Alt_L", "Alt_R":
+		r.altHeld = held
+	}
+	if state != 1 {
+		return
+	}
+
+	if r.phase == phaseScroll {
+		switch sym {
+		case "Escape":
+			r.cancelled = true
+			r.running = false
+		case "Return", "KP_Enter":
+			r.finishScroll()
+		}
+		return
+	}
+
+	switch sym {
+	case "Escape":
+		r.cancelled = true
+		r.running = false
+	case "p":
+		r.showCapturedCursor = !r.showCapturedCursor
+		for _, os := range r.surfaces {
+			r.redrawSurface(os)
+		}
+	case "Return", "space", "KP_Enter":
+		if r.selection.hasSelection {
+			r.finishSelection()
+		}
+	}
 }
 
 func (r *RegionSelector) selectionDeviceRect() (*OutputSurface, int, int, int, int) {
@@ -379,6 +647,11 @@ func (r *RegionSelector) selectionDeviceRect() (*OutputSurface, int, int, int, i
 }
 
 func (r *RegionSelector) finishSelection() {
+	if r.screenshoter != nil && r.screenshoter.config.Geometry {
+		r.running = false
+		return
+	}
+
 	scrollMode := r.screenshoter != nil && r.screenshoter.config.Mode == ModeScroll
 	switch {
 	case scrollMode:

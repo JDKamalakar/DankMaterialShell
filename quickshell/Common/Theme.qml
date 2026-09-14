@@ -8,7 +8,9 @@ import Quickshell.Io
 import qs.Common
 import qs.DankCommon.Common as DankCommon
 import qs.Services
+import qs.Modules.Greetd
 import "StockThemes.js" as StockThemes
+import "GSettings.js" as GSettings
 
 Singleton {
     id: root
@@ -143,13 +145,11 @@ Singleton {
 
     Component.onCompleted: {
         Quickshell.execDetached(["mkdir", "-p", stateDir]);
-        // shellDir may be an embedded-UI extraction, which is read-only and
-        // unexecutable (dankgo shellapp/shellfs makeReadOnly chmods 0444)
-        Quickshell.execDetached(["bash", shellDir + "/scripts/gtk.sh", configDir, "assets", "", shellDir]);
         Proc.runCommand("matugenCheck", ["sh", "-c", "command -v matugen"], (output, code) => {
             matugenAvailable = (code === 0) && !envDisableMatugen;
+            const isGreeterMode = (typeof SessionData !== "undefined" && SessionData.isGreeterMode);
 
-            if (!matugenAvailable) {
+            if (!matugenAvailable || isGreeterMode) {
                 return;
             }
 
@@ -294,32 +294,7 @@ Singleton {
         if (currentTheme === "custom") {
             return customThemeData || StockThemes.getThemeByName("purple", isLightMode);
         } else if (currentTheme === dynamic) {
-            return {
-                "primary": getMatugenColor("primary", "#42a5f5"),
-                "primaryText": getMatugenColor("on_primary", "#ffffff"),
-                "primaryContainer": getMatugenColor("primary_container", "#1976d2"),
-                "secondary": getMatugenColor("secondary", "#8ab4f8"),
-                "secondaryContainer": getMatugenColor("secondary_container", getMatugenColor("surface_container_high", "#292b2f")),
-                "tertiary": getMatugenColor("tertiary", "#efb8c8"),
-                "tertiaryContainer": getMatugenColor("tertiary_container", getMatugenColor("surface_container_high", "#292b2f")),
-                "surface": getMatugenColor("surface", "#1a1c1e"),
-                "surfaceText": getMatugenColor("on_background", "#e3e8ef"),
-                "surfaceVariant": getMatugenColor("surface_variant", "#44464f"),
-                "surfaceVariantText": getMatugenColor("on_surface_variant", "#c4c7c5"),
-                "surfaceTint": getMatugenColor("surface_tint", "#8ab4f8"),
-                "background": getMatugenColor("background", "#1a1c1e"),
-                "backgroundText": getMatugenColor("on_background", "#e3e8ef"),
-                "outline": getMatugenColor("outline", "#8e918f"),
-                "surfaceContainerLowest": getMatugenColor("surface_container_lowest", "#0e1013"),
-                "surfaceContainerLow": getMatugenColor("surface_container_low", "#181a1d"),
-                "surfaceContainer": getMatugenColor("surface_container", "#1e2023"),
-                "surfaceContainerHigh": getMatugenColor("surface_container_high", "#292b2f"),
-                "surfaceContainerHighest": getMatugenColor("surface_container_highest", "#343740"),
-                "error": "#F2B8B5",
-                "warning": "#FF9800",
-                "info": "#2196F3",
-                "success": "#4CAF50"
-            };
+            return buildExtractedDynamicMode(isLightMode ? "light" : "dark", "Dynamic");
         } else {
             return StockThemes.getThemeByName(currentTheme, isLightMode);
         }
@@ -389,6 +364,38 @@ Singleton {
                 return schemes[i];
         }
         return schemes[0];
+    }
+
+    readonly property var availableSourceModes: [({
+                "value": "dominant",
+                "label": I18n.tr("Dominant", "matugen source color option")
+            }), ({
+                "value": "colorful",
+                "label": I18n.tr("Colorful", "matugen source color option")
+            }), ({
+                "value": "darkness",
+                "label": I18n.tr("Darkest", "matugen source color option")
+            }), ({
+                "value": "lightness",
+                "label": I18n.tr("Lightest", "matugen source color option")
+            }), ({
+                "value": "saturation",
+                "label": I18n.tr("Most Saturated", "matugen source color option")
+            }), ({
+                "value": "less-saturation",
+                "label": I18n.tr("Least Saturated", "matugen source color option")
+            }), ({
+                "value": "value",
+                "label": I18n.tr("Most Vivid", "matugen source color option")
+            })]
+
+    function getSourceMode(value) {
+        const modes = availableSourceModes;
+        for (var i = 0; i < modes.length; i++) {
+            if (modes[i].value === value)
+                return modes[i];
+        }
+        return modes[0];
     }
 
     property color primary: currentThemeData.primary
@@ -1130,11 +1137,26 @@ Singleton {
         return presetMap[SettingsData.modalAnimationSpeed] ?? 150;
     }
 
-    property real cornerRadius: typeof SettingsData !== "undefined" ? SettingsData.cornerRadius : 12
+    property real cornerRadius: {
+        if (typeof SessionData !== "undefined" && SessionData.isGreeterMode && typeof GreetdSettings !== "undefined") {
+            return GreetdSettings.cornerRadius;
+        }
+        return typeof SettingsData !== "undefined" ? SettingsData.cornerRadius : 12;
+    }
 
-    property string fontFamily: typeof SettingsData !== "undefined" ? resolvedFontFamily(SettingsData.fontFamily) : DankCommon.Fonts.sans
+    property string fontFamily: {
+        if (typeof SessionData !== "undefined" && SessionData.isGreeterMode && typeof GreetdSettings !== "undefined") {
+            return resolvedFontFamily(GreetdSettings.getEffectiveFontFamily());
+        }
+        return typeof SettingsData !== "undefined" ? resolvedFontFamily(SettingsData.fontFamily) : DankCommon.Fonts.sans;
+    }
 
-    property string monoFontFamily: typeof SettingsData !== "undefined" ? resolvedMonoFontFamily(SettingsData.monoFontFamily) : DankCommon.Fonts.mono
+    property string monoFontFamily: {
+        if (typeof SessionData !== "undefined" && SessionData.isGreeterMode && typeof GreetdSettings !== "undefined") {
+            return resolvedMonoFontFamily(GreetdSettings.monoFontFamily);
+        }
+        return typeof SettingsData !== "undefined" ? resolvedMonoFontFamily(SettingsData.monoFontFamily) : DankCommon.Fonts.mono;
+    }
 
     function resolvedFontFamily(family) {
         if (family === defaultFontFamily)
@@ -1148,9 +1170,19 @@ Singleton {
         return family;
     }
 
-    property int fontWeight: typeof SettingsData !== "undefined" ? SettingsData.fontWeight : Font.Normal
+    property int fontWeight: {
+        if (typeof SessionData !== "undefined" && SessionData.isGreeterMode && typeof GreetdSettings !== "undefined") {
+            return GreetdSettings.fontWeight;
+        }
+        return typeof SettingsData !== "undefined" ? SettingsData.fontWeight : Font.Normal;
+    }
 
-    property real fontScale: typeof SettingsData !== "undefined" ? SettingsData.fontScale : 1.0
+    property real fontScale: {
+        if (typeof SessionData !== "undefined" && SessionData.isGreeterMode && typeof GreetdSettings !== "undefined") {
+            return GreetdSettings.fontScale;
+        }
+        return typeof SettingsData !== "undefined" ? SettingsData.fontScale : 1.0;
+    }
 
     property real spacingXXS: 2
     property real spacingXS: 4
@@ -1208,12 +1240,22 @@ Singleton {
                 currentThemeCategory = "generic";
             }
         }
-        if (savePrefs && typeof SettingsData !== "undefined") {
+        const isGreeterMode = (typeof SessionData !== "undefined" && SessionData.isGreeterMode);
+        if (savePrefs && typeof SettingsData !== "undefined" && !isGreeterMode) {
             SettingsData.set("currentThemeCategory", currentThemeCategory);
             SettingsData.set("currentThemeName", currentTheme);
         }
 
-        generateSystemThemesFromCurrentTheme();
+        if (!isGreeterMode) {
+            generateSystemThemesFromCurrentTheme();
+        }
+    }
+
+    function applyGreeterTheme(themeName) {
+        switchTheme(themeName, false, false);
+        if (themeName === dynamic && dynamicColorsFileView.path) {
+            dynamicColorsFileView.reload();
+        }
     }
 
     function setLightMode(light, savePrefs = true, enableTransition = false) {
@@ -1230,14 +1272,17 @@ Singleton {
             return;
         }
 
-        if (savePrefs && typeof SessionData !== "undefined") {
+        const isGreeterMode = (typeof SessionData !== "undefined" && SessionData.isGreeterMode);
+        if (savePrefs && typeof SessionData !== "undefined" && !isGreeterMode) {
             SessionData.setLightMode(light);
         }
 
-        if (typeof SettingsData !== "undefined") {
-            SettingsData.updateCosmicThemeMode(light);
+        if (!isGreeterMode) {
+            if (typeof SettingsData !== "undefined") {
+                SettingsData.updateCosmicThemeMode(light);
+            }
+            generateSystemThemesFromCurrentTheme();
         }
-        generateSystemThemesFromCurrentTheme();
     }
 
     function toggleLightMode(savePrefs = true) {
@@ -1275,7 +1320,8 @@ Singleton {
             if (themeData.variants.type === "multi" && themeData.variants.flavors && themeData.variants.accents) {
                 const defaults = themeData.variants.defaults || {};
                 const modeDefaults = defaults[colorMode] || defaults.dark || {};
-                const stored = typeof SettingsData !== "undefined" ? SettingsData.getRegistryThemeMultiVariant(themeId, modeDefaults, colorMode) : modeDefaults;
+                const isGreeterMode = typeof SessionData !== "undefined" && SessionData.isGreeterMode;
+                const stored = isGreeterMode ? (GreetdSettings.registryThemeVariants[themeId]?.[colorMode] || modeDefaults) : (typeof SettingsData !== "undefined" ? SettingsData.getRegistryThemeMultiVariant(themeId, modeDefaults, colorMode) : modeDefaults);
                 var flavorId = stored.flavor || modeDefaults.flavor || "";
                 const accentId = stored.accent || modeDefaults.accent || "";
                 var flavor = findVariant(themeData.variants.flavors, flavorId);
@@ -1301,7 +1347,8 @@ Singleton {
             }
 
             if (themeData.variants.options && themeData.variants.options.length > 0) {
-                const selectedVariantId = typeof SettingsData !== "undefined" ? SettingsData.getRegistryThemeVariant(themeId, themeData.variants.default) : themeData.variants.default;
+                const isGreeterMode = typeof SessionData !== "undefined" && SessionData.isGreeterMode;
+                const selectedVariantId = isGreeterMode ? (typeof GreetdSettings.registryThemeVariants[themeId] === "string" ? GreetdSettings.registryThemeVariants[themeId] : themeData.variants.default) : (typeof SettingsData !== "undefined" ? SettingsData.getRegistryThemeVariant(themeId, themeData.variants.default) : themeData.variants.default);
                 const variant = findVariant(themeData.variants.options, selectedVariantId);
                 if (variant) {
                     const variantColors = variant[colorMode] || variant.dark || variant.light || {};
@@ -1421,6 +1468,8 @@ Singleton {
         }
     }
 
+    property color widgetInactiveIconColor: withAlpha(widgetIconColor, 0.6)
+
     property color widgetTextColor: {
         if (typeof SettingsData === "undefined") {
             return surfaceText;
@@ -1440,7 +1489,7 @@ Singleton {
         const size = (maximizeIcon ?? false) ? iconSizeLarge : iconSize;
         const s = iconScale !== undefined ? iconScale : 1.0;
 
-        return Math.round((barThickness / 48) * (size + defaultOffset) * s);
+        return 2 * Math.round((barThickness / 48) * (size + defaultOffset) * s / 2);
     }
 
     function barTextSize(barThickness, fontScale, maximizeText) {
@@ -1575,6 +1624,13 @@ Singleton {
         if (typeof SettingsData !== "undefined" && SettingsData.matugenContrast !== 0) {
             args.push("--contrast", SettingsData.matugenContrast.toString());
         }
+        // Only sent when it would change something. A shell newer than the dms
+        // binary is a supported setup (DMS_SHELL_DIR / -c), and an older binary
+        // exits with "unknown flag: --source-mode" rather than ignoring it, so
+        // the default must not put the flag on the command line at all.
+        if (typeof SettingsData !== "undefined" && SettingsData.matugenSourceMode && SettingsData.matugenSourceMode !== "dominant") {
+            args.push("--source-mode", SettingsData.matugenSourceMode);
+        }
 
         if (typeof SettingsData !== "undefined") {
             const skipTemplates = [];
@@ -1642,7 +1698,8 @@ Singleton {
     }
 
     function generateSystemThemesFromCurrentTheme() {
-        if (!matugenAvailable)
+        const isGreeterMode = (typeof SessionData !== "undefined" && SessionData.isGreeterMode);
+        if (!matugenAvailable || isGreeterMode)
             return;
 
         _lastGenerateMs = Date.now();
@@ -1813,30 +1870,19 @@ Singleton {
         const theme = isLight ? "adw-gtk3" : "adw-gtk3-dark";
         const schema = "org.gnome.desktop.interface";
         const key = "gtk-theme";
+        const reset = GSettings.setCmd(schema, key, "");
+        const apply = GSettings.setCmd(schema, key, theme);
 
-        const makeCmd = (tool, schema, val) => {
-            if (tool === "gsettings") {
-                return `gsettings set ${schema} ${key} '' && gsettings set ${schema} ${key} ${val}`;
-            } else {
-                const dconfPath = `/${schema.replace(/\./g, "/")}`;
-                return `dconf write ${dconfPath}/${key} "''" && dconf write ${dconfPath}/${key} "'${val}'"`;
-            }
-        };
-
-        Proc.runCommand("gtkRefresher", ["sh", "-c", makeCmd("gsettings", schema, theme)], (output, exitCode) => {
+        Proc.runCommand("gtkRefresher", ["sh", "-c", `${reset}; ${apply}`], (output, exitCode) => {
             if (exitCode !== 0) {
-                Proc.runCommand("gtkRefreshFallback", ["sh", "-c", makeCmd("dconf", schema, theme)], (output, exitCode) => {
-                    if (exitCode !== 0) {
-                        log.warn("Failed to refresh gtk-theme");
-                    }
-                });
+                log.warn("Failed to refresh gtk-theme");
             }
         });
     }
 
     function patchGtk3colors() {
         const isLight = (typeof SessionData !== "undefined" && SessionData.isLightMode);
-        Proc.runCommand("gtk3Patcher", ["bash", shellDir + "/scripts/gtk.sh", configDir, "patch", isLight, shellDir], (output, exitCode) => {
+        Proc.runCommand("gtk3Patcher", ["bash", shellDir + "/scripts/gtk.sh", configDir, "patch", isLight], (output, exitCode) => {
             switch (exitCode) {
             case 0:
                 refreshGtkTheme();
@@ -1858,7 +1904,7 @@ Singleton {
         }
 
         const isLight = (typeof SessionData !== "undefined" && SessionData.isLightMode) ? "true" : "false";
-        Proc.runCommand("gtkApplier", ["bash", shellDir + "/scripts/gtk.sh", configDir, "apply", isLight, shellDir], (output, exitCode) => {
+        Proc.runCommand("gtkApplier", ["bash", shellDir + "/scripts/gtk.sh", configDir, "apply", isLight], (output, exitCode) => {
             if (exitCode === 0) {
                 if (typeof ToastService !== "undefined" && !root.matugenToastSuppressed) {
                     ToastService.showInfo(I18n.tr("GTK colors applied successfully"));
@@ -1995,9 +2041,23 @@ Singleton {
         return Math.round(value * s) / s;
     }
 
+    // Qt rounds a centred anchor offset to whole pixels, so a box must share its content's parity
+    function snapEven(value, dpr) {
+        const s = dpr || 1;
+        return 2 * Math.round(value * s / 2) / s;
+    }
+
     function px(value, dpr) {
         const s = dpr || 1;
         return Math.round(value * s) / s;
+    }
+
+    function barWidgetThickness(innerPadding, dpr) {
+        return snapEven(Math.max(20, 26 + innerPadding * 0.6), dpr);
+    }
+
+    function barThickness(innerPadding, dpr) {
+        return snapEven(Math.max(barWidgetThickness(innerPadding, dpr) + innerPadding + 4, barHeight - 4 - (8 - innerPadding)), dpr);
     }
 
     function hairline(dpr) {
@@ -2132,11 +2192,32 @@ Singleton {
         }
     }
 
+    readonly property string _greeterCacheDir: Quickshell.env("DMS_GREET_CFG_DIR") || "/var/cache/dms-greeter"
+
+    property string greeterColorsBaseDir: root._greeterCacheDir
+
+    function setGreeterColorsBaseDir(dir) {
+        const next = dir || root._greeterCacheDir;
+        if (greeterColorsBaseDir === next)
+            return;
+        greeterColorsBaseDir = next;
+        if (typeof SessionData !== "undefined" && SessionData.isGreeterMode)
+            dynamicColorsFileView.reload();
+    }
+
+    function resetGreeterColorsBaseDir() {
+        setGreeterColorsBaseDir(root._greeterCacheDir);
+    }
+
     FileView {
         id: dynamicColorsFileView
-        path: stateDir + "/dms-colors.json"
+        path: {
+            if (SessionData.isGreeterMode)
+                return root.greeterColorsBaseDir ? (root.greeterColorsBaseDir + "/colors.json") : "";
+            return stateDir + "/dms-colors.json";
+        }
         blockLoading: false
-        watchChanges: true
+        watchChanges: !SessionData.isGreeterMode
 
         function parseAndLoadColors() {
             try {
@@ -2176,6 +2257,9 @@ Singleton {
 
         onLoadFailed: function (error) {
             if (currentTheme !== dynamic)
+                return;
+
+            if (SessionData.isGreeterMode)
                 return;
 
             if (workerRunning) {

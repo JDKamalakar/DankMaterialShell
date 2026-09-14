@@ -68,9 +68,9 @@ Item {
 
         anchors.verticalCenter: parent.verticalCenter
         wrapMode: Text.NoWrap
-        width: root.needsScrolling ? implicitWidth : root.width
-        elide: root.needsScrolling ? Text.ElideNone : Text.ElideRight
-        x: Math.round((root.needsScrolling ? -root.scrollOffset : 0) + root.textShift)
+        width: Math.min(implicitWidth, root.width)
+        elide: SettingsData.scrollTitleEnabled ? Text.ElideNone : Text.ElideRight
+        x: Math.round((root.needsScrolling ? -Math.min(root.scrollOffset, root.maxScrollOffset) : 0) + root.textShift)
         opacity: 1
 
         onTextChanged: {

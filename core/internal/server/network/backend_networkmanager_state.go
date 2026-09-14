@@ -63,6 +63,8 @@ func (b *NetworkManagerBackend) updatePrimaryConnection() error {
 		b.state.NetworkStatus = StatusEthernet
 	case "802-11-wireless":
 		b.state.NetworkStatus = StatusWiFi
+	case "gsm", "cdma":
+		b.state.NetworkStatus = StatusCellular
 	case "vpn", "wireguard":
 		b.state.NetworkStatus = StatusVPN
 	default:
@@ -107,6 +109,40 @@ func (b *NetworkManagerBackend) updateEthernetState() error {
 	return nil
 }
 
+func (b *NetworkManagerBackend) updateCellularState() error {
+	var connectedDevice string
+	var connectedIP string
+	var anyConnected bool
+
+	for name, info := range b.cellularDevicesSnapshot() {
+		state, err := info.device.GetPropertyState()
+		if err != nil {
+			continue
+		}
+
+		if state == gonetworkmanager.NmDeviceStateActivated {
+			anyConnected = true
+			connectedDevice = name
+			connectedIP = b.getDeviceIP(info.device)
+			break
+		}
+	}
+
+	if !anyConnected && b.cellularDevice != nil {
+		dev := b.cellularDevice.(gonetworkmanager.Device)
+		iface, _ := dev.GetPropertyInterface()
+		connectedDevice = iface
+	}
+
+	b.stateMutex.Lock()
+	b.state.CellularDevice = connectedDevice
+	b.state.CellularConnected = anyConnected
+	b.state.CellularIP = connectedIP
+	b.stateMutex.Unlock()
+
+	return nil
+}
+
 func (b *NetworkManagerBackend) getDeviceStateReason(dev gonetworkmanager.Device) uint32 {
 	path := dev.GetPath()
 	obj := b.dbusConn.Object("org.freedesktop.NetworkManager", path)
@@ -145,6 +181,12 @@ func (b *NetworkManagerBackend) classifyNMStateReason(reason uint32) string {
 	default:
 		return errdefs.ErrConnectionFailed
 	}
+}
+
+// NM raises NO_SECRETS once auth retries run out on a saved profile too, not only
+// on a dismissed prompt (nm-device-wifi.c handle_8021x_or_psk_auth_fail, #3313).
+func forgetOnConnectFailure(reasonCode string, preExisting bool) bool {
+	return reasonCode == errdefs.ErrUserCanceled && !preExisting
 }
 
 // With several adapters, state must follow the associated device, not whichever
@@ -285,7 +327,7 @@ func (b *NetworkManagerBackend) updateWiFiState() error {
 			b.state.ConnectingSSID = ""
 			b.state.LastError = reasonCode
 
-			if reasonCode == errdefs.ErrUserCanceled {
+			if forgetOnConnectFailure(reasonCode, b.state.ConnectingPreExisting) {
 				forgetSSID = connectingSSID
 			}
 

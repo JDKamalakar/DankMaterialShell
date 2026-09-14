@@ -8,6 +8,7 @@ import Quickshell.Io
 import Quickshell.Services.Pipewire
 import qs.Common
 import qs.Services
+import "../Common/GSettings.js" as GSettings
 
 Singleton {
     id: root
@@ -18,7 +19,9 @@ Singleton {
 
     readonly property bool soundsAvailable: MultimediaService.available
     property bool playersRequested: false
-    property bool gsettingsAvailable: false
+    property bool soundThemeSupported: false
+    property bool soundThemeResolved: false
+    property bool loginSoundPending: false
     property var availableSoundThemes: []
     property string currentSoundTheme: ""
     property var soundFilePaths: ({})
@@ -53,6 +56,9 @@ Singleton {
     property bool wireplumberReloading: false
 
     property var sinkPorts: ({})
+    property var cards: []
+    property var pendingCardSwitch: null
+    readonly property var switchableOutputPorts: root.collectSwitchableOutputPorts(root.cards)
 
     readonly property int sinkMaxVolume: {
         const name = sink?.name ?? "";
@@ -124,6 +130,7 @@ Singleton {
         target: Pipewire.nodes
         function onValuesChanged() {
             root.rebuildTypedNodeLists();
+            root.adoptPendingCardSink();
         }
     }
 
@@ -266,6 +273,225 @@ Singleton {
 
         commit();
         return result;
+    }
+
+    function refreshCards(callback) {
+        Proc.runCommand("audio-list-cards", ["env", "LC_ALL=C", "pactl", "list", "cards"], (output, exitCode) => {
+            root.cards = exitCode === 0 ? root.parseCards(output) : [];
+            if (callback)
+                callback();
+        }, 0);
+    }
+
+    function parseCards(text) {
+        const cards = [];
+        let card = null;
+        let port = null;
+        let section = "";
+
+        function commit() {
+            if (!card?.name)
+                return;
+            const props = card.props;
+            card.description = props["device.description"] || props["device.nick"] || props["alsa.card_name"] || card.name;
+            cards.push(card);
+        }
+
+        function applyProperty(target, line) {
+            const match = line.match(/^([^=\s]+)\s*=\s*"(.*)"$/);
+            if (match)
+                target[match[1]] = match[2];
+        }
+
+        function addProfile(target, line) {
+            const match = line.match(/^(.+?):\s+(.*)\s+\(([^()]*)\)$/);
+            if (!match)
+                return;
+            const meta = match[3];
+            target.profiles[match[1]] = {
+                description: match[2],
+                priority: parseInt(meta.match(/priority:?\s*(\d+)/)?.[1] ?? "0", 10),
+                available: !/available:\s*no/.test(meta)
+            };
+        }
+
+        function addPort(target, line) {
+            const match = line.match(/^(.+?):\s+(.*)\s+\(([^()]*)\)$/);
+            if (!match)
+                return null;
+            const meta = match[3];
+            let availability = "unknown";
+            if (meta.includes("not available"))
+                availability = "no";
+            else if (/\bavailable\b/.test(meta))
+                availability = "yes";
+            const entry = {
+                name: match[1],
+                description: match[2],
+                type: (meta.match(/type:\s*([^,]+)/)?.[1] ?? "").trim().toLowerCase(),
+                availability: availability,
+                profiles: [],
+                props: {}
+            };
+            target.ports.push(entry);
+            return entry;
+        }
+
+        for (const rawLine of (text || "").split("\n")) {
+            const line = rawLine.trim();
+
+            if (/^Card #\d+/.test(line)) {
+                commit();
+                card = {
+                    name: "",
+                    description: "",
+                    activeProfile: "",
+                    profiles: {},
+                    ports: [],
+                    props: {}
+                };
+                port = null;
+                section = "";
+                continue;
+            }
+
+            if (!card)
+                continue;
+
+            if (line.startsWith("Name:")) {
+                card.name = line.substring(5).trim();
+                section = "";
+                continue;
+            }
+            if (line === "Properties:") {
+                section = port ? "portProps" : "cardProps";
+                continue;
+            }
+            if (line === "Profiles:") {
+                section = "profiles";
+                continue;
+            }
+            if (line === "Ports:") {
+                section = "ports";
+                continue;
+            }
+            if (line.startsWith("Active Profile:")) {
+                card.activeProfile = line.substring(15).trim();
+                section = "";
+                continue;
+            }
+            if (line.startsWith("Part of profile(s):")) {
+                if (port)
+                    port.profiles = line.substring(19).split(",").map(s => s.trim()).filter(s => s);
+                section = "ports";
+                continue;
+            }
+
+            switch (section) {
+            case "cardProps":
+                applyProperty(card.props, line);
+                break;
+            case "portProps":
+                if (port)
+                    applyProperty(port.props, line);
+                break;
+            case "profiles":
+                addProfile(card, line);
+                break;
+            case "ports":
+                port = addPort(card, line) ?? port;
+                break;
+            }
+        }
+
+        commit();
+        return cards;
+    }
+
+    function bestOutputProfile(card, port) {
+        const candidates = port.profiles.filter(name => name.startsWith("output:") && card.profiles[name]?.available);
+        if (candidates.length === 0)
+            return "";
+        candidates.sort((a, b) => card.profiles[b].priority - card.profiles[a].priority);
+        return candidates[0];
+    }
+
+    function collectSwitchableOutputPorts(cards) {
+        const entries = [];
+        for (const card of cards || []) {
+            if (!card.activeProfile || card.activeProfile === "pro-audio")
+                continue;
+            for (const port of card.ports) {
+                if (port.availability === "no" || port.profiles.includes(card.activeProfile))
+                    continue;
+                const profile = bestOutputProfile(card, port);
+                if (!profile)
+                    continue;
+                const product = port.props["device.product.name"] || "";
+                entries.push({
+                    cardName: card.name,
+                    cardDescription: card.description,
+                    portName: port.name,
+                    profile: profile,
+                    icon: port.type === "hdmi" ? "tv" : "speaker",
+                    title: product ? `${port.description} [${product}]` : port.description
+                });
+            }
+        }
+        return entries;
+    }
+
+    function sinkBelongsToCard(node, cardName) {
+        if (!node || node.isStream || !cardName)
+            return false;
+        if (node.properties?.["device.name"] === cardName)
+            return true;
+        if (!cardName.startsWith("alsa_card."))
+            return false;
+        return (node.name || "").startsWith("alsa_output." + cardName.substring(10) + ".");
+    }
+
+    function activateOutputPort(entry, callback) {
+        if (!entry?.cardName || !entry.profile)
+            return;
+        const previousSinks = Pipewire.nodes.values.filter(n => n.isSink && sinkBelongsToCard(n, entry.cardName)).map(n => n.name);
+        Proc.runCommand("audio-set-card-profile", ["env", "LC_ALL=C", "pactl", "set-card-profile", entry.cardName, entry.profile], (output, exitCode) => {
+            const ok = exitCode === 0;
+            if (ok) {
+                root.pendingCardSwitch = {
+                    cardName: entry.cardName,
+                    portName: entry.portName,
+                    exclude: previousSinks
+                };
+                pendingCardSwitchTimer.restart();
+                root.adoptPendingCardSink();
+            }
+            if (callback)
+                callback(ok, ok ? I18n.tr("Output switched", "audio card profile switched successful message") : (output || I18n.tr("Failed to switch output", "audio card profile switch failure message")));
+            Qt.callLater(() => {
+                root.refreshCards();
+                root.refreshSinkPorts();
+            });
+        }, 0);
+    }
+
+    function adoptPendingCardSink() {
+        const pending = pendingCardSwitch;
+        if (!pending)
+            return;
+        const node = Pipewire.nodes.values.find(n => n.isSink && sinkBelongsToCard(n, pending.cardName) && !pending.exclude.includes(n.name));
+        if (!node)
+            return;
+        pendingCardSwitch = null;
+        pendingCardSwitchTimer.stop();
+        setSink(node);
+        setSinkPort(node.name, pending.portName);
+    }
+
+    Timer {
+        id: pendingCardSwitchTimer
+        interval: 5000
+        onTriggered: root.pendingCardSwitch = null
     }
 
     function cycleAudioOutputDirection(forward) {
@@ -545,13 +771,15 @@ EOFCONFIG
         }
     }
 
-    function checkGsettings() {
-        Proc.runCommand("checkGsettings", ["sh", "-c", "gsettings get org.gnome.desktop.sound theme-name 2>/dev/null"], (output, exitCode) => {
-            gsettingsAvailable = (exitCode === 0);
-            if (gsettingsAvailable) {
-                scanSoundThemes();
-                getCurrentSoundTheme();
+    function checkSoundThemeSupport() {
+        Proc.runCommand("checkSoundThemeSupport", ["sh", "-c", GSettings.getCmd("org.gnome.desktop.sound", "theme-name")], (output, exitCode) => {
+            soundThemeSupported = (output || "").trim().length > 0;
+            if (!soundThemeSupported) {
+                markSoundThemeResolved();
+                return;
             }
+            scanSoundThemes();
+            getCurrentSoundTheme();
         }, 0);
     }
 
@@ -581,17 +809,14 @@ EOFCONFIG
     }
 
     function getCurrentSoundTheme() {
-        Proc.runCommand("getCurrentSoundTheme", ["sh", "-c", "gsettings get org.gnome.desktop.sound theme-name 2>/dev/null | sed \"s/'//g\""], (output, exitCode) => {
-            if (exitCode === 0 && output.trim()) {
-                currentSoundTheme = output.trim();
-                log.debug("Current system sound theme:", currentSoundTheme);
-                if (SettingsData.useSystemSoundTheme) {
-                    discoverSoundFiles(currentSoundTheme);
-                }
-            } else {
-                currentSoundTheme = "";
-                log.debug("No system sound theme found");
+        Proc.runCommand("getCurrentSoundTheme", ["sh", "-c", GSettings.getCmd("org.gnome.desktop.sound", "theme-name")], (output, exitCode) => {
+            currentSoundTheme = output.trim();
+            log.debug("Current system sound theme:", currentSoundTheme || "none");
+            if (currentSoundTheme && SettingsData.useSystemSoundTheme) {
+                discoverSoundFiles(currentSoundTheme);
+                return;
             }
+            markSoundThemeResolved();
         }, 0);
     }
 
@@ -600,7 +825,7 @@ EOFCONFIG
             return;
         }
 
-        Proc.runCommand("setSoundTheme", ["sh", "-c", `gsettings set org.gnome.desktop.sound theme-name '${themeName}'`], (output, exitCode) => {
+        Proc.runCommand("setSoundTheme", ["sh", "-c", GSettings.setCmd("org.gnome.desktop.sound", "theme-name", themeName)], (output, exitCode) => {
             if (exitCode === 0) {
                 currentSoundTheme = themeName;
                 if (SettingsData.useSystemSoundTheme) {
@@ -613,6 +838,7 @@ EOFCONFIG
     function discoverSoundFiles(themeName) {
         if (!themeName) {
             soundFilePaths = {};
+            markSoundThemeResolved();
             return;
         }
 
@@ -641,22 +867,21 @@ EOFCONFIG
                 for theme in ${themesToSearch}; do
                     for event_name in $names; do
                         for base_path in ${searchPaths.join(" ")}; do
-                            sounds_path="$base_path/sounds"
-                            for ext in ${extensions.join(" ")}; do
-                                file_path="$sounds_path/$theme/stereo/$event_name.$ext"
-                                if [ -f "$file_path" ]; then
-                                    echo "$event_key=$file_path"
-                                    found=1
-                                    break
-                                fi
-                            done
-                            [ $found -eq 1 ] && break
+                            theme_dir="$base_path/sounds/$theme"
+                            [ -d "$theme_dir" ] || continue
+                            file_path=$(find -L "$theme_dir" \\( ${extensions.map(e => `-name "$event_name.${e}"`).join(" -o ")} \\) -print 2>/dev/null | sort | head -1)
+                            if [ -n "$file_path" ]; then
+                                echo "$event_key=$file_path"
+                                found=1
+                                break
+                            fi
                         done
                         [ $found -eq 1 ] && break
                     done
                     [ $found -eq 1 ] && break
                 done
             done
+            exit 0
         `;
 
         Proc.runCommand("discoverSoundFiles", ["sh", "-c", script], (output, exitCode) => {
@@ -671,7 +896,16 @@ EOFCONFIG
                 }
             }
             soundFilePaths = paths;
+            markSoundThemeResolved();
         }, 0);
+    }
+
+    function markSoundThemeResolved() {
+        soundThemeResolved = true;
+        if (!loginSoundPending)
+            return;
+        loginSoundPending = false;
+        playLoginSound();
     }
 
     function getSoundPath(soundEvent) {
@@ -709,9 +943,10 @@ EOFCONFIG
         log.debug("Reloading sounds, useSystemSoundTheme:", SettingsData.useSystemSoundTheme, "currentSoundTheme:", currentSoundTheme);
         if (SettingsData.useSystemSoundTheme && currentSoundTheme) {
             discoverSoundFiles(currentSoundTheme);
-        } else {
-            soundFilePaths = {};
+            return;
         }
+        soundFilePaths = {};
+        markSoundThemeResolved();
     }
 
     function isMediaPlaying() {
@@ -766,6 +1001,11 @@ EOFCONFIG
 
     function playLoginSound() {
         ensurePlayers();
+        // playing before the theme paths land swaps the player source mid-playback, which stops it
+        if (SettingsData.useSystemSoundTheme && !soundThemeResolved) {
+            loginSoundPending = true;
+            return;
+        }
         if (!soundsAvailable || !loginSound || notificationsAudioMuted || shouldMuteForMedia()) {
             return;
         }
@@ -798,6 +1038,14 @@ EOFCONFIG
     }
 
     readonly property string sinkVolumeIconName: volumeIconName(sink)
+    readonly property bool sinkSilent: isSilent(sink)
+
+    function isSilent(node) {
+        const audio = node?.audio;
+        if (!audio)
+            return false;
+        return audio.muted || audio.volume === 0;
+    }
 
     function volumeIconName(node, noDeviceIcon = "volume_off") {
         const audio = node?.audio;
@@ -1165,11 +1413,13 @@ EOFCONFIG
     onSoundsAvailableChanged: {
         if (!soundsAvailable)
             return;
-        checkGsettings();
+        checkSoundThemeSupport();
     }
 
     Component.onCompleted: {
         rebuildTypedNodeLists();
         loadDeviceAliases();
+        if (SettingsData.soundsEnabled && SettingsData.useSystemSoundTheme)
+            getCurrentSoundTheme();
     }
 }

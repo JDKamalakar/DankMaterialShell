@@ -22,6 +22,7 @@ Item {
     property var cachedCursorThemes: SettingsData.availableCursorThemes
     readonly property bool matugenSmartCapable: Theme.matugenAvailable && DMSService.matugenSmartSupported
     property var cachedMatugenSchemes: Theme.availableMatugenSchemes.filter(option => DMSService.matugenSmartSupported || option.value !== "scheme-smart").map(option => option.label)
+    property var cachedSourceModes: Theme.availableSourceModes.map(option => option.label)
     property var matugenSchemePreviews: ({})
     property string matugenPreviewSource: ""
     property string matugenPreviewImage: ""
@@ -454,6 +455,17 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
             spacing: Theme.spacingXL
 
+            Loader {
+                width: parent.width
+                active: CompositorService.isAqueous
+                sourceComponent: AqueousAppearanceSettings {
+                    cursor: true
+                    settingKey: "aqueousCursor"
+                    title: I18n.tr("Aqueous cursor", "Aqueous compositor cursor synchronization settings")
+                    visible: CompositorService.isAqueous
+                }
+            }
+
             SettingsCard {
                 tab: "theme"
                 tags: ["color", "palette", "theme", "appearance"]
@@ -786,6 +798,27 @@ Item {
                             wrapMode: Text.WordWrap
                             width: parent.width - Theme.spacingM * 2
                             x: Theme.spacingM
+                        }
+
+                        SettingsDropdownRow {
+                            tab: "theme"
+                            tags: ["matugen", "seed", "source", "wallpaper", "dynamic"]
+                            settingKey: "matugenSourceMode"
+                            text: I18n.tr("Source Color")
+                            description: I18n.tr("Select which color is extracted from the wallpaper to seed the palette")
+                            options: cachedSourceModes
+                            currentValue: Theme.getSourceMode(SettingsData.matugenSourceMode).label
+                            enabled: Theme.matugenAvailable
+                            opacity: enabled ? 1 : 0.4
+                            onValueChanged: value => {
+                                for (var i = 0; i < Theme.availableSourceModes.length; i++) {
+                                    var option = Theme.availableSourceModes[i];
+                                    if (option.label === value) {
+                                        SettingsData.setMatugenSourceMode(option.value);
+                                        break;
+                                    }
+                                }
+                            }
                         }
 
                         SettingsSliderRow {
@@ -1956,6 +1989,7 @@ Item {
                 SettingsControlledBy {
                     visible: themeColorsTab.connectedFrameModeActive
                     parentModal: themeColorsTab.parentModal
+                    section: "frameOpacity"
                     settingLabel: I18n.tr("Surface Opacity")
                     reason: I18n.tr("Managed by Frame in Connected Mode")
                 }
@@ -3166,10 +3200,27 @@ Item {
         }
     }
 
+    property bool _themeBrowserShowQueued: false
+
+    Connections {
+        target: themeBrowserLoader
+
+        function onItemChanged() {
+            if (!themeColorsTab._themeBrowserShowQueued || !themeBrowserLoader.item)
+                return;
+            themeColorsTab._themeBrowserShowQueued = false;
+            themeBrowserLoader.item.show();
+        }
+    }
+
     function showThemeBrowser() {
         themeBrowserLoader.active = true;
-        if (themeBrowserLoader.item)
+        if (themeBrowserLoader.item) {
             themeBrowserLoader.item.show();
+            return;
+        }
+        // LazyLoader can't incubate on its first event-loop tick; show once item lands
+        _themeBrowserShowQueued = true;
     }
 
     FileView {

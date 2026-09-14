@@ -3,6 +3,7 @@ pragma ComponentBehavior: Bound
 
 import QtQuick
 import Quickshell
+import Quickshell.Io
 import qs.Common
 import qs.Services
 
@@ -490,6 +491,16 @@ Singleton {
         }
     }
 
+    Connections {
+        target: SettingsData
+        function onBuiltInPluginSettingsChanged() {
+            root.invalidateLauncherCache();
+        }
+        function onLauncherPluginVisibilityChanged() {
+            root.invalidateLauncherCache();
+        }
+    }
+
     Component.onCompleted: {
         _rebuildHiddenSet();
         refreshApplications();
@@ -759,11 +770,7 @@ Singleton {
         return results;
     }
 
-    function getCategoriesForApp(app) {
-        if (!app?.categories)
-            return [];
-
-        const categoryMap = {
+    readonly property var _categoryMap: ({
             "AudioVideo": I18n.tr("Media"),
             "Audio": I18n.tr("Media"),
             "Video": I18n.tr("Media"),
@@ -788,15 +795,20 @@ Singleton {
             "Accessories": I18n.tr("Utilities"),
             "FileManager": I18n.tr("Utilities"),
             "TerminalEmulator": I18n.tr("Utilities")
-        };
+        })
+
+    on_CategoryMapChanged: _cachedCategories = null
+
+    function getCategoriesForApp(app) {
+        if (!app?.categories)
+            return [];
 
         const mappedCategories = new Set();
-
         for (const cat of app.categories) {
-            if (categoryMap[cat])
-                mappedCategories.add(categoryMap[cat]);
+            const mapped = _categoryMap[cat];
+            if (mapped)
+                mappedCategories.add(mapped);
         }
-
         return Array.from(mappedCategories);
     }
 
@@ -832,14 +844,10 @@ Singleton {
             appCategories.forEach(cat => categories.add(cat));
         }
 
-        // Include categories from core apps (e.g. DMS Settings)
         for (const app of coreApps) {
             const appCategories = getCategoriesForApp(app);
             appCategories.forEach(cat => categories.add(cat));
         }
-
-        const pluginCategories = getPluginCategories();
-        pluginCategories.forEach(cat => categories.add(cat));
 
         _cachedCategories = Array.from(categories).sort();
         return _cachedCategories;
@@ -996,5 +1004,69 @@ Singleton {
         } catch (e) {
             log.warn("Error setting category on plugin", pluginId, ":", e);
         }
+    }
+
+    signal uninstallAppConfirmRequested(string appId, string appName, string flatpakId)
+
+    property string _uninstallingAppId: ""
+    property string _uninstallingAppName: ""
+    property string _uninstallingStderr: ""
+
+    Process {
+        id: flatpakUninstallProc
+        running: false
+        command: []
+
+        stderr: StdioCollector {
+            onStreamFinished: {
+                root._uninstallingStderr = (text || "").trim();
+            }
+        }
+
+        onExited: exitCode => {
+            const appName = root._uninstallingAppName;
+            const appId = root._uninstallingAppId;
+            const err = root._uninstallingStderr;
+            root._uninstallingAppName = "";
+            root._uninstallingAppId = "";
+            root._uninstallingStderr = "";
+
+            if (exitCode === 0) {
+                ToastService.showInfo(I18n.tr("Uninstalled: %1", "uninstallation success").arg(appName));
+                if (appId) {
+                    SessionData.removePinnedApp(appId);
+                    SessionData.removeBarPinnedApp(appId);
+                }
+                root.refreshApplications();
+            } else {
+                ToastService.showError(
+                    I18n.tr("Uninstall failed: %1", "uninstallation error").arg(appName),
+                    err
+                );
+            }
+        }
+    }
+
+    function requestUninstallFlatpak(appId, appName, flatpakId) {
+        if (!flatpakId)
+            return;
+        uninstallAppConfirmRequested(appId, appName, flatpakId);
+    }
+
+    function uninstallFlatpak(appId, appName, flatpakId) {
+        if (!flatpakId)
+            return;
+        if (flatpakUninstallProc.running) {
+            ToastService.showWarning(I18n.tr("An uninstallation is already in progress", "toast warning message"));
+            return;
+        }
+
+        _uninstallingAppId = appId || "";
+        _uninstallingAppName = appName || flatpakId;
+        _uninstallingStderr = "";
+        flatpakUninstallProc.command = ["flatpak", "uninstall", "-y", "--app", flatpakId];
+        flatpakUninstallProc.running = true;
+
+        ToastService.showInfo(I18n.tr("Uninstalling: %1", "uninstallation progress").arg(_uninstallingAppName));
     }
 }

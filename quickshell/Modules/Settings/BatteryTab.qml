@@ -8,22 +8,51 @@ import qs.Modules.Settings.Widgets
 Item {
     id: root
 
+    readonly property color batteryStatusColor: {
+        if (BatteryService.isLowBattery && !BatteryService.isCharging)
+            return Theme.error;
+        if (BatteryService.isCharging || BatteryService.isPluggedIn)
+            return Theme.primary;
+        return Theme.surfaceText;
+    }
+
+    // The sysfs names DMS can write, in the order they are tried. Hardware that
+    // exposes none of them, a Lenovo IdeaPad on ideapad_laptop for instance,
+    // used to run the apply script to completion without writing anything, and
+    // sh exiting 0 was indistinguishable from a successful write.
+    readonly property string thresholdFileList: "charge_control_limit_max charge_stop_threshold charge_control_end_threshold"
+    readonly property int noThresholdExitCode: 2
+
+    property bool chargeLimitSupported: true
+
+    Process {
+        id: thresholdProbe
+        running: Qt.platform.os === "linux"
+        command: ["sh", "-c", "for bat in /sys/class/power_supply/BAT*; do for file in " + root.thresholdFileList + "; do [ -f \"$bat/$file\" ] && exit 0; done; done; exit 1"]
+        onExited: exitCode => root.chargeLimitSupported = exitCode === 0
+    }
+
     Process {
         id: applyLimitProcess
         command: ["pkexec", "sh", "-c", "
+found=0
 for bat in /sys/class/power_supply/BAT*; do
-  if [ -f \"$bat/charge_control_limit_max\" ]; then
-    echo " + SettingsData.batteryChargeLimit + " > \"$bat/charge_control_limit_max\"
-  elif [ -f \"$bat/charge_stop_threshold\" ]; then
-    echo " + SettingsData.batteryChargeLimit + " > \"$bat/charge_stop_threshold\"
-  elif [ -f \"$bat/charge_control_end_threshold\" ]; then
-    echo " + SettingsData.batteryChargeLimit + " > \"$bat/charge_control_end_threshold\"
-  fi
+  for file in " + root.thresholdFileList + "; do
+    if [ -f \"$bat/$file\" ]; then
+      found=1
+      echo " + SettingsData.batteryChargeLimit + " > \"$bat/$file\" || exit 1
+      break
+    fi
+  done
 done
+[ \"$found\" = 1 ] || exit " + root.noThresholdExitCode + "
 "]
         running: false
         onExited: exitCode => {
-            if (exitCode !== 0) {
+            if (exitCode === root.noThresholdExitCode) {
+                root.chargeLimitSupported = false;
+                ToastService.showError(I18n.tr("Charge limit not supported on this hardware", "battery settings: toast title when sysfs has no charge threshold"), I18n.tr("No writable charge threshold file was found under /sys/class/power_supply.", "battery settings: why the charge limit could not be applied"));
+            } else if (exitCode !== 0) {
                 ToastService.showError(I18n.tr("Failed to apply charge limit to system"), I18n.tr("Process exited with code %1").arg(exitCode));
             } else {
                 ToastService.showInfo(I18n.tr("Charge limit applied successfully"), I18n.tr("Limit set to %1%").arg(SettingsData.batteryChargeLimit));
@@ -47,7 +76,6 @@ done
             // 1. Information Card
             SettingsCard {
                 width: parent.width
-                iconName: "battery_charging_full"
                 title: I18n.tr("Status")
                 settingKey: "batteryStatusCard"
                 tags: ["battery", "status", "charge", "health"]
@@ -57,108 +85,132 @@ done
                     x: Theme.spacingM
                     spacing: Theme.spacingM
 
-                    SettingsDivider {}
-
                     Row {
                         width: parent.width
-                        StyledText {
-                            text: I18n.tr("Power source")
-                            font.pixelSize: Theme.fontSizeMedium
-                            color: Theme.surfaceVariantText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
+                        spacing: Theme.spacingM
+
+                        DankIcon {
+                            name: BatteryService.getBatteryIcon()
+                            size: Theme.iconSizeLarge
+                            color: root.batteryStatusColor
+                            anchors.verticalCenter: parent.verticalCenter
                         }
-                        StyledText {
-                            text: BatteryService.isPluggedIn ? I18n.tr("AC Adapter (Plugged In)") : I18n.tr("Battery Power")
-                            font.pixelSize: Theme.fontSizeMedium
-                            font.weight: Font.Medium
-                            color: Theme.surfaceText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
+
+                        Column {
+                            spacing: Theme.spacingXS
+                            width: parent.width - Theme.iconSizeLarge - Theme.spacingM
+                            anchors.verticalCenter: parent.verticalCenter
+
+                            Row {
+                                spacing: Theme.spacingS
+                                width: parent.width
+
+                                StyledText {
+                                    text: BatteryService.batteryAvailable ? `${BatteryService.batteryLevel}%` : ""
+                                    font.pixelSize: Theme.fontSizeXLarge
+                                    font.weight: Font.Bold
+                                    color: root.batteryStatusColor
+                                }
+
+                                StyledText {
+                                    text: BatteryService.batteryStatus
+                                    font.pixelSize: Theme.fontSizeLarge
+                                    font.weight: Font.Medium
+                                    color: Theme.surfaceText
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    elide: Text.ElideRight
+                                    width: Math.max(0, parent.width - 100)
+                                }
+                            }
+
+                            StyledText {
+                                text: BatteryService.isPluggedIn ? I18n.tr("AC Adapter (Plugged In)") : I18n.tr("Battery Power")
+                                font.pixelSize: Theme.fontSizeSmall
+                                color: Theme.surfaceTextMedium
+                                width: parent.width
+                                elide: Text.ElideRight
+                            }
                         }
                     }
 
-                    SettingsDivider {}
-
-                    Row {
+                    Item {
                         width: parent.width
-                        StyledText {
-                            text: I18n.tr("Charge Level")
-                            font.pixelSize: Theme.fontSizeMedium
-                            color: Theme.surfaceVariantText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
+                        height: 4
+
+                        Rectangle {
+                            anchors.fill: parent
+                            radius: height / 2
+                            color: Theme.withAlpha(Theme.primary, 0.16)
                         }
-                        StyledText {
-                            text: `${BatteryService.batteryLevel}%`
-                            font.pixelSize: Theme.fontSizeMedium
-                            font.weight: Font.Medium
-                            color: Theme.surfaceText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
+
+                        Rectangle {
+                            anchors.left: parent.left
+                            width: parent.width * Math.max(0, Math.min(1, BatteryService.batteryLevel / 100))
+                            height: parent.height
+                            radius: height / 2
+                            color: root.batteryStatusColor
+                            visible: BatteryService.batteryAvailable
                         }
                     }
 
-                    SettingsDivider {}
-
                     Row {
                         width: parent.width
-                        StyledText {
-                            text: I18n.tr("Status")
-                            font.pixelSize: Theme.fontSizeMedium
-                            color: Theme.surfaceVariantText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
-                        }
-                        StyledText {
-                            text: BatteryService.batteryStatus
-                            font.pixelSize: Theme.fontSizeMedium
-                            font.weight: Font.Medium
-                            color: Theme.surfaceText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
-                        }
-                    }
+                        spacing: Theme.spacingM
 
-                    SettingsDivider {}
+                        Item {
+                            width: (parent.width - Theme.spacingM) / 2
+                            height: timeColumn.implicitHeight
 
-                    Row {
-                        width: parent.width
-                        StyledText {
-                            text: I18n.tr("Estimated Time")
-                            font.pixelSize: Theme.fontSizeMedium
-                            color: Theme.surfaceVariantText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
-                        }
-                        StyledText {
-                            text: BatteryService.formatTimeRemaining()
-                            font.pixelSize: Theme.fontSizeMedium
-                            font.weight: Font.Medium
-                            color: Theme.surfaceText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
-                        }
-                    }
+                            Column {
+                                id: timeColumn
+                                width: parent.width
+                                spacing: Theme.spacingXXS
 
-                    SettingsDivider {}
+                                StyledText {
+                                    text: I18n.tr("Estimated Time")
+                                    font.pixelSize: Theme.fontSizeSmall
+                                    color: Theme.surfaceTextMedium
+                                }
 
-                    Row {
-                        width: parent.width
-                        StyledText {
-                            text: I18n.tr("Battery Health")
-                            font.pixelSize: Theme.fontSizeMedium
-                            color: Theme.surfaceVariantText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
+                                StyledText {
+                                    text: {
+                                        const remaining = BatteryService.formatTimeRemaining();
+                                        const estimated = BatteryService.formatEstimatedTime();
+                                        return estimated ? `${remaining} (${estimated})` : remaining;
+                                    }
+                                    font.pixelSize: Theme.fontSizeMedium
+                                    font.weight: Font.Medium
+                                    color: Theme.surfaceText
+                                    width: parent.width
+                                    elide: Text.ElideRight
+                                }
+                            }
                         }
-                        StyledText {
-                            text: BatteryService.batteryHealth
-                            font.pixelSize: Theme.fontSizeMedium
-                            font.weight: Font.Medium
-                            color: Theme.surfaceText
-                            width: parent.width / 2
-                            horizontalAlignment: Text.AlignLeft
+
+                        Item {
+                            width: (parent.width - Theme.spacingM) / 2
+                            height: healthColumn.implicitHeight
+
+                            Column {
+                                id: healthColumn
+                                width: parent.width
+                                spacing: Theme.spacingXXS
+
+                                StyledText {
+                                    text: I18n.tr("Battery Health")
+                                    font.pixelSize: Theme.fontSizeSmall
+                                    color: Theme.surfaceTextMedium
+                                }
+
+                                StyledText {
+                                    text: BatteryService.batteryHealth
+                                    font.pixelSize: Theme.fontSizeMedium
+                                    font.weight: Font.Medium
+                                    color: Theme.surfaceText
+                                    width: parent.width
+                                    elide: Text.ElideRight
+                                }
+                            }
                         }
                     }
                 }
@@ -183,9 +235,24 @@ done
                     onSliderValueChanged: newValue => SettingsData.set("batteryChargeLimit", newValue)
                 }
 
+                StyledText {
+                    width: parent.width
+                    // A machine without a battery has no charge threshold to
+                    // write to either, but saying so there would be noise: the
+                    // limit was never applicable in the first place.
+                    visible: Qt.platform.os === "linux" && BatteryService.batteryAvailable && !root.chargeLimitSupported
+                    text: I18n.tr("No writable charge threshold file was found under /sys/class/power_supply.", "battery settings: why the charge limit could not be applied")
+                    wrapMode: Text.WordWrap
+                    color: Theme.surfaceVariantText
+                    font.pixelSize: Theme.fontSizeMedium
+                }
+
                 Row {
-                    // charge_control_* live in Linux sysfs; no BSD equivalent
-                    visible: Qt.platform.os === "linux"
+                    // charge_control_* live in Linux sysfs; no BSD equivalent.
+                    // Without a battery the apply button cannot do anything,
+                    // and offering it anyway is what produced the false
+                    // success this change is about.
+                    visible: Qt.platform.os === "linux" && BatteryService.batteryAvailable && root.chargeLimitSupported
                     width: parent.width
                     height: applyButton.height
                     layoutDirection: I18n.isRtl ? Qt.LeftToRight : Qt.RightToLeft

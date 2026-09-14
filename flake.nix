@@ -111,7 +111,7 @@
               inherit version;
               pname = "dms-shell";
               src = ./core;
-              vendorHash = "sha256-X9DzsqrHZt4SQWCTvoxEABTSSBVPvFIJqAH3mtcEfio=";
+              vendorHash = "sha256-Ls6Dquwt0fzDCEjZ6FfTsZTXDI8408mFdByv/OWHVgI=";
 
               subPackages = [ "cmd/dms" ];
 
@@ -129,6 +129,8 @@
               postInstall = ''
                 mkdir -p $out/share/quickshell/dms
                 cp -r ${rootSrc}/quickshell/. $out/share/quickshell/dms/
+                chmod -R u+w $out/share/quickshell/dms/tests
+                rm -rf $out/share/quickshell/dms/tests
 
                 rm -f $out/share/quickshell/dms/DankCommon
                 cp -r ${dank-qml-common}/DankCommon $out/share/quickshell/dms/DankCommon
@@ -147,8 +149,11 @@
                 install -D ${rootSrc}/core/assets/danklogo.svg \
                   $out/share/hicolor/scalable/apps/danklogo.svg
 
+                # Snapshot pre-wrap Qt paths so launched apps get their own, not DMS's pins.
                 wrapProgram $out/bin/dms \
                   --add-flags "-c $out/share/quickshell/dms" \
+                  --run 'export DMS_ORIG_NIXPKGS_QT6_QML_IMPORT_PATH="''${NIXPKGS_QT6_QML_IMPORT_PATH:-}"' \
+                  --run 'export DMS_ORIG_QT_PLUGIN_PATH="''${QT_PLUGIN_PATH:-}"' \
                   --prefix "NIXPKGS_QT6_QML_IMPORT_PATH" ":" "${mkQmlImportPath pkgs qtPackages}" \
                   --prefix "QT_PLUGIN_PATH" ":" "${mkQtPluginPath pkgs qtPackages}"
 

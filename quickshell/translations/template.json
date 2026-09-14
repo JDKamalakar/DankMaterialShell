@@ -252,6 +252,13 @@
     "comment": ""
   },
   {
+    "term": "%1 — %2",
+    "translation": "",
+    "context": "%1 — %2",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "%1: %2",
     "translation": "",
     "context": "%1: %2",
@@ -304,6 +311,13 @@
     "term": "0 = square corners",
     "translation": "",
     "context": "0 = square corners",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "1 Connecting Line",
+    "translation": "",
+    "context": "1 Connecting Line",
     "reference": "",
     "comment": ""
   },
@@ -444,6 +458,13 @@
     "term": "180°",
     "translation": "",
     "context": "180°",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "2 Connecting Lines",
+    "translation": "",
+    "context": "2 Connecting Lines",
     "reference": "",
     "comment": ""
   },
@@ -777,6 +798,13 @@
     "comment": ""
   },
   {
+    "term": "AUTO",
+    "translation": "",
+    "context": "AUTO",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Aborted",
     "translation": "",
     "context": "Aborted",
@@ -875,6 +903,13 @@
     "comment": ""
   },
   {
+    "term": "Action when Enter",
+    "translation": "",
+    "context": "Action when Enter",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Actions",
     "translation": "",
     "context": "Actions",
@@ -938,6 +973,13 @@
     "comment": ""
   },
   {
+    "term": "Active Window",
+    "translation": "",
+    "context": "Active Window",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Active in Column",
     "translation": "",
     "context": "Active in Column",
@@ -983,6 +1025,13 @@
     "term": "Adaptive",
     "translation": "",
     "context": "Adaptive",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Adaptive (DMS Theme)",
+    "translation": "",
+    "context": "Adaptive (DMS Theme)",
     "reference": "",
     "comment": ""
   },
@@ -1039,6 +1088,13 @@
     "term": "Add Printer",
     "translation": "",
     "context": "Add Printer",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Add Text Note",
+    "translation": "",
+    "context": "Add Text Note",
     "reference": "",
     "comment": ""
   },
@@ -1251,6 +1307,20 @@
     "context": "All",
     "reference": "",
     "comment": "Tailscale filter: all devices | notification history filter | plugin browser category filter"
+  },
+  {
+    "term": "All Combined Outputs",
+    "translation": "",
+    "context": "All Combined Outputs",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "All Outputs",
+    "translation": "",
+    "context": "All Outputs",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "All checks passed",
@@ -1491,6 +1561,27 @@
     "comment": ""
   },
   {
+    "term": "Annotating",
+    "translation": "",
+    "context": "Annotating",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Annotation Tools",
+    "translation": "",
+    "context": "Annotation Tools",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Anonymous Copy (stripped metadata)",
+    "translation": "",
+    "context": "Anonymous Copy (stripped metadata)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Anonymous Identity",
     "translation": "",
     "context": "Anonymous Identity",
@@ -1568,13 +1659,6 @@
     "comment": "lock screen notification mode option | notification rule match field option"
   },
   {
-    "term": "App Theming",
-    "translation": "",
-    "context": "App Theming",
-    "reference": "",
-    "comment": "greeter feature card title"
-  },
-  {
     "term": "App name or identity (e.g., firefox)",
     "translation": "",
     "context": "App name or identity (e.g., firefox)",
@@ -1620,6 +1704,13 @@
     "term": "Applications and commands to start automatically when you log in",
     "translation": "",
     "context": "Applications and commands to start automatically when you log in",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Applied independently of night mode",
+    "translation": "",
+    "context": "Applied independently of night mode",
     "reference": "",
     "comment": ""
   },
@@ -1792,6 +1883,34 @@
     "comment": ""
   },
   {
+    "term": "Arrow (3)",
+    "translation": "",
+    "context": "Arrow (3)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Arrow Color",
+    "translation": "",
+    "context": "Arrow Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Arrow Thickness",
+    "translation": "",
+    "context": "Arrow Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Arrow Vector",
+    "translation": "",
+    "context": "Arrow Vector",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "At Startup",
     "translation": "",
     "context": "At Startup",
@@ -1823,6 +1942,13 @@
     "term": "Audio",
     "translation": "",
     "context": "Audio",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Audio & Overlay",
+    "translation": "",
+    "context": "Audio & Overlay",
     "reference": "",
     "comment": ""
   },
@@ -2030,9 +2156,23 @@
     "comment": ""
   },
   {
+    "term": "Auto Balance",
+    "translation": "",
+    "context": "Auto Balance",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Auto Compositor Gaps",
     "translation": "",
     "context": "Auto Compositor Gaps",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Auto Detect",
+    "translation": "",
+    "context": "Auto Detect",
     "reference": "",
     "comment": ""
   },
@@ -2114,11 +2254,25 @@
     "comment": ""
   },
   {
+    "term": "Auto-apply background defaults",
+    "translation": "",
+    "context": "Auto-apply background defaults",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Auto-close Niri overview when DMS launches or focuses a window.",
     "translation": "",
     "context": "Auto-close Niri overview when DMS launches or focuses a window.",
     "reference": "",
     "comment": "Description of the close Niri overview on window focus setting"
+  },
+  {
+    "term": "Auto-close the loop when ending near the start point.",
+    "translation": "",
+    "context": "Auto-close the loop when ending near the start point.",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Auto-delete notifications older than this",
@@ -2170,9 +2324,30 @@
     "comment": ""
   },
   {
+    "term": "Auto-minimize",
+    "translation": "",
+    "context": "Auto-minimize",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Auto-save to disk",
     "translation": "",
     "context": "Auto-save to disk",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Auto-select a tool preset on hover, without releasing the mouse.",
+    "translation": "",
+    "context": "Auto-select a tool preset on hover, without releasing the mouse.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Auto-tiling",
+    "translation": "",
+    "context": "Auto-tiling",
     "reference": "",
     "comment": ""
   },
@@ -2282,6 +2457,13 @@
     "comment": ""
   },
   {
+    "term": "Automatically minimize the float window after a delay",
+    "translation": "",
+    "context": "Automatically minimize the float window after a delay",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Automatically picks the scheme variant based on the wallpaper.",
     "translation": "",
     "context": "Automatically picks the scheme variant based on the wallpaper.",
@@ -2292,6 +2474,13 @@
     "term": "Automatically save changes to opened files as you type",
     "translation": "",
     "context": "Automatically save changes to opened files as you type",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Automatically stack windows to avoid overlap",
+    "translation": "",
+    "context": "Automatically stack windows to avoid overlap",
     "reference": "",
     "comment": ""
   },
@@ -2394,6 +2583,13 @@
     "comment": "greeter back button"
   },
   {
+    "term": "Back to Annotation (B)",
+    "translation": "",
+    "context": "Back to Annotation (B)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Backend",
     "translation": "",
     "context": "Backend",
@@ -2406,6 +2602,13 @@
     "context": "Background",
     "reference": "",
     "comment": "island settings: satellite background toggle"
+  },
+  {
+    "term": "Background (B)",
+    "translation": "",
+    "context": "Background (B)",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Background Blur",
@@ -2422,6 +2625,13 @@
     "comment": ""
   },
   {
+    "term": "Background Defaults",
+    "translation": "",
+    "context": "Background Defaults",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Background Effect",
     "translation": "",
     "context": "Background Effect",
@@ -2429,9 +2639,30 @@
     "comment": ""
   },
   {
+    "term": "Background Image Folder",
+    "translation": "",
+    "context": "Background Image Folder",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Background Images",
+    "translation": "",
+    "context": "Background Images",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Background Opacity",
     "translation": "",
     "context": "Background Opacity",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Background Presets",
+    "translation": "",
+    "context": "Background Presets",
     "reference": "",
     "comment": ""
   },
@@ -2506,6 +2737,13 @@
     "comment": ""
   },
   {
+    "term": "Bar Interactions",
+    "translation": "",
+    "context": "Bar Interactions",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Bar Length Padding",
     "translation": "",
     "context": "Bar Length Padding",
@@ -2530,20 +2768,6 @@
     "term": "Bar Spacing",
     "translation": "",
     "context": "Bar Spacing",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Bar border and shadow",
-    "translation": "",
-    "context": "Bar border and shadow",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Bar corners",
-    "translation": "",
-    "context": "Bar corners",
     "reference": "",
     "comment": ""
   },
@@ -2611,6 +2835,13 @@
     "comment": ""
   },
   {
+    "term": "Battery Colors",
+    "translation": "",
+    "context": "Battery Colors",
+    "reference": "",
+    "comment": "bar appearance: battery indicator color card"
+  },
+  {
     "term": "Battery Health",
     "translation": "",
     "context": "Battery Health",
@@ -2623,6 +2854,13 @@
     "context": "Battery Power",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Battery Style",
+    "translation": "",
+    "context": "Battery Style",
+    "reference": "",
+    "comment": "island settings: battery meter style row"
   },
   {
     "term": "Battery and power management",
@@ -2716,6 +2954,13 @@
     "comment": ""
   },
   {
+    "term": "Blink Recording Dot",
+    "translation": "",
+    "context": "Blink Recording Dot",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Block %1 in Do Not Disturb",
     "translation": "",
     "context": "Block %1 in Do Not Disturb",
@@ -2786,6 +3031,13 @@
     "comment": ""
   },
   {
+    "term": "Blur Background Image",
+    "translation": "",
+    "context": "Blur Background Image",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Blur Wallpaper Layer",
     "translation": "",
     "context": "Blur Wallpaper Layer",
@@ -2796,6 +3048,13 @@
     "term": "Blur on Overview",
     "translation": "",
     "context": "Blur on Overview",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Blur the album art behind the media player",
+    "translation": "",
+    "context": "Blur the album art behind the media player",
     "reference": "",
     "comment": ""
   },
@@ -2926,6 +3185,13 @@
     "comment": ""
   },
   {
+    "term": "Both",
+    "translation": "",
+    "context": "Both",
+    "reference": "",
+    "comment": "island settings: clock shows time and date | island settings: level shown as icon and percentage"
+  },
+  {
     "term": "Bottom",
     "translation": "",
     "context": "Bottom",
@@ -2979,7 +3245,7 @@
     "translation": "",
     "context": "Brightness",
     "reference": "",
-    "comment": "island system face: brightness title"
+    "comment": "island settings: brightness slot row | island system face: brightness title"
   },
   {
     "term": "Brightness Slider",
@@ -2987,6 +3253,13 @@
     "context": "Brightness Slider",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Brightness Style",
+    "translation": "",
+    "context": "Brightness Style",
+    "reference": "",
+    "comment": "island settings: brightness display mode row"
   },
   {
     "term": "Brightness Value",
@@ -3129,6 +3402,13 @@
     "comment": ""
   },
   {
+    "term": "CUST",
+    "translation": "",
+    "context": "CUST",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Calendar",
     "translation": "",
     "context": "Calendar",
@@ -3139,6 +3419,34 @@
     "term": "Calendar Backend",
     "translation": "",
     "context": "Calendar Backend",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Callout",
+    "translation": "",
+    "context": "Callout",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Callout (Z) | Hold G for Loupe",
+    "translation": "",
+    "context": "Callout (Z) | Hold G for Loupe",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Callout Zoom",
+    "translation": "",
+    "context": "Callout Zoom",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Callout, Background (Z, B)",
+    "translation": "",
+    "context": "Callout, Background (Z, B)",
     "reference": "",
     "comment": ""
   },
@@ -3255,6 +3563,34 @@
     "comment": ""
   },
   {
+    "term": "Capture",
+    "translation": "",
+    "context": "Capture",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Capture Actions",
+    "translation": "",
+    "context": "Capture Actions",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Capture Options",
+    "translation": "",
+    "context": "Capture Options",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Capturing...",
+    "translation": "",
+    "context": "Capturing...",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Cast Target",
     "translation": "",
     "context": "Cast Target",
@@ -3269,16 +3605,58 @@
     "comment": "plugin browser sort option"
   },
   {
-    "term": "Center Section",
+    "term": "Catppuccin",
     "translation": "",
-    "context": "Center Section",
+    "context": "Catppuccin",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "Center Section - Reserved by Dank Island",
+    "term": "Cellular",
     "translation": "",
-    "context": "Center Section - Reserved by Dank Island",
+    "context": "Cellular",
+    "reference": "",
+    "comment": "network status"
+  },
+  {
+    "term": "Cellular disabled",
+    "translation": "",
+    "context": "Cellular disabled",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Cellular enabled",
+    "translation": "",
+    "context": "Cellular enabled",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Center",
+    "translation": "",
+    "context": "Center",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Center Left",
+    "translation": "",
+    "context": "Center Left",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Center Right",
+    "translation": "",
+    "context": "Center Right",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Center Section",
+    "translation": "",
+    "context": "Center Section",
     "reference": "",
     "comment": ""
   },
@@ -3342,13 +3720,6 @@
     "term": "Characters per second while holding down key",
     "translation": "",
     "context": "Characters per second while holding down key",
-    "reference": "",
-    "comment": ""
-  },
-  {
-    "term": "Charge Level",
-    "translation": "",
-    "context": "Charge Level",
     "reference": "",
     "comment": ""
   },
@@ -3542,6 +3913,20 @@
     "comment": ""
   },
   {
+    "term": "Choose notifications shown after copy or save.",
+    "translation": "",
+    "context": "Choose notifications shown after copy or save.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Choose the editor shape for portrait or landscape screens.",
+    "translation": "",
+    "context": "Choose the editor shape for portrait or landscape screens.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Choose the logo displayed on the launcher button in DankBar",
     "translation": "",
     "context": "Choose the logo displayed on the launcher button in DankBar",
@@ -3577,6 +3962,13 @@
     "comment": ""
   },
   {
+    "term": "Choose whether the editor opens as a modal overlay or a movable floating window.",
+    "translation": "",
+    "context": "Choose whether the editor opens as a modal overlay or a movable floating window.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Choose whether to launch a desktop app or a command",
     "translation": "",
     "context": "Choose whether to launch a desktop app or a command",
@@ -3598,18 +3990,18 @@
     "comment": ""
   },
   {
+    "term": "Choose which monitor to capture during full screen recording.",
+    "translation": "",
+    "context": "Choose which monitor to capture during full screen recording.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Choose which monitors show the lock screen interface. Other monitors will display a solid color for OLED burn-in protection.",
     "translation": "",
     "context": "Choose which monitors show the lock screen interface. Other monitors will display a solid color for OLED burn-in protection.",
     "reference": "",
     "comment": ""
-  },
-  {
-    "term": "Choose which shortcuts sit left or right of the clock",
-    "translation": "",
-    "context": "Choose which shortcuts sit left or right of the clock",
-    "reference": "",
-    "comment": "island settings: home face slot hint"
   },
   {
     "term": "Chroma Style",
@@ -3630,7 +4022,7 @@
     "translation": "",
     "context": "Circle",
     "reference": "",
-    "comment": "dock indicator style option"
+    "comment": "dock indicator style option | island settings: circular battery meter style"
   },
   {
     "term": "Class regex",
@@ -3643,6 +4035,20 @@
     "term": "Class regex (e.g. ^firefox$)",
     "translation": "",
     "context": "Class regex (e.g. ^firefox$)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Classic (Tailwind)",
+    "translation": "",
+    "context": "Classic (Tailwind)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Clean Text Eraser",
+    "translation": "",
+    "context": "Clean Text Eraser",
     "reference": "",
     "comment": ""
   },
@@ -3675,6 +4081,13 @@
     "comment": "island settings: clear the notification badge when the center opens"
   },
   {
+    "term": "Clear Filtered",
+    "translation": "",
+    "context": "Clear Filtered",
+    "reference": "",
+    "comment": "clipboard modal: clear button tooltip while a search filter is active"
+  },
+  {
     "term": "Clear History?",
     "translation": "",
     "context": "Clear History?",
@@ -3699,6 +4112,13 @@
     "term": "Clear at Startup",
     "translation": "",
     "context": "Clear at Startup",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Clear saved region selection before each capture",
+    "translation": "",
+    "context": "Clear saved region selection before each capture",
     "reference": "",
     "comment": ""
   },
@@ -3861,14 +4281,14 @@
     "translation": "",
     "context": "Clock",
     "reference": "",
-    "comment": ""
+    "comment": "island settings: pinned clock row in the home layout"
   },
   {
     "term": "Clock Style",
     "translation": "",
     "context": "Clock Style",
     "reference": "",
-    "comment": ""
+    "comment": "island settings: clock display mode row | lock screen clock layout setting"
   },
   {
     "term": "Clock, calendar, system info and profile",
@@ -3888,6 +4308,13 @@
     "term": "Close All Windows",
     "translation": "",
     "context": "Close All Windows",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Close Annotator",
+    "translation": "",
+    "context": "Close Annotator",
     "reference": "",
     "comment": ""
   },
@@ -3969,6 +4396,13 @@
     "comment": ""
   },
   {
+    "term": "Color Palette",
+    "translation": "",
+    "context": "Color Palette",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Color Picker",
     "translation": "",
     "context": "Color Picker",
@@ -3976,9 +4410,30 @@
     "comment": ""
   },
   {
+    "term": "Color Picker (F for RGB | Eyedropper)",
+    "translation": "",
+    "context": "Color Picker (F for RGB | Eyedropper)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Color Picker, Eraser (F, T)",
+    "translation": "",
+    "context": "Color Picker, Eraser (F, T)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Color Temperature",
     "translation": "",
     "context": "Color Temperature",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Color copied to clipboard: %1",
+    "translation": "",
+    "context": "Color copied to clipboard: %1",
     "reference": "",
     "comment": ""
   },
@@ -4036,7 +4491,7 @@
     "translation": "",
     "context": "Colorful",
     "reference": "",
-    "comment": "widget style option"
+    "comment": "matugen source color option | widget style option"
   },
   {
     "term": "Colorful mix of bright contrasting accents.",
@@ -4116,11 +4571,11 @@
     "comment": ""
   },
   {
-    "term": "Community themes",
+    "term": "Community favorites to get you started",
     "translation": "",
-    "context": "Community themes",
+    "context": "Community favorites to get you started",
     "reference": "",
-    "comment": "greeter feature card description"
+    "comment": "greeter plugins page subtitle"
   },
   {
     "term": "Compact",
@@ -4130,13 +4585,6 @@
     "comment": ""
   },
   {
-    "term": "Compact Clock Pill",
-    "translation": "",
-    "context": "Compact Clock Pill",
-    "reference": "",
-    "comment": "island settings: tighter home pill toggle"
-  },
-  {
     "term": "Compact Island Height",
     "translation": "",
     "context": "Compact Island Height",
@@ -4144,11 +4592,25 @@
     "comment": "island settings: compact pill height slider"
   },
   {
+    "term": "Compact Island Width",
+    "translation": "",
+    "context": "Compact Island Width",
+    "reference": "",
+    "comment": "island settings: compact pill width slider"
+  },
+  {
     "term": "Compact Mode",
     "translation": "",
     "context": "Compact Mode",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Compact Pill",
+    "translation": "",
+    "context": "Compact Pill",
+    "reference": "",
+    "comment": "island settings: tighter home pill toggle"
   },
   {
     "term": "Compact home clock pill in both width and height",
@@ -4277,6 +4739,13 @@
     "comment": ""
   },
   {
+    "term": "Configure up to 8 quick-access tool presets. Right-click during capture to open the radial menu.",
+    "translation": "",
+    "context": "Configure up to 8 quick-access tool presets. Right-click during capture to open the radial menu.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Configure which displays show \"%1\"",
     "translation": "",
     "context": "Configure which displays show \"%1\"",
@@ -4336,6 +4805,13 @@
     "term": "Conflicts with: %1",
     "translation": "",
     "context": "Conflicts with: %1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Conic Gradient",
+    "translation": "",
+    "context": "Conic Gradient",
     "reference": "",
     "comment": ""
   },
@@ -4438,6 +4914,13 @@
     "comment": "Status message when test connection to printer fails"
   },
   {
+    "term": "Container Format",
+    "translation": "",
+    "context": "Container Format",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Contains",
     "translation": "",
     "context": "Contains",
@@ -4466,18 +4949,18 @@
     "comment": ""
   },
   {
-    "term": "Contrast by variant",
-    "translation": "",
-    "context": "Contrast by variant",
-    "reference": "",
-    "comment": "WCAG breakdown popup heading"
-  },
-  {
     "term": "Contributor",
     "translation": "",
     "context": "Contributor",
     "reference": "",
     "comment": "plugin browser sort option"
+  },
+  {
+    "term": "Contributors",
+    "translation": "",
+    "context": "Contributors",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Control Center",
@@ -4578,6 +5061,13 @@
     "comment": ""
   },
   {
+    "term": "Controls the preview pixel budget while editing. Lower it if you experience lag. Does not affect the final saved image quality.",
+    "translation": "",
+    "context": "Controls the preview pixel budget while editing. Lower it if you experience lag. Does not affect the final saved image quality.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Convenience options for the login screen",
     "translation": "",
     "context": "Convenience options for the login screen",
@@ -4592,9 +5082,37 @@
     "comment": ""
   },
   {
+    "term": "Converting recording to GIF...",
+    "translation": "",
+    "context": "Converting recording to GIF...",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Cooldown",
     "translation": "",
     "context": "Cooldown",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Copied",
+    "translation": "",
+    "context": "Copied",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Copied & saved",
+    "translation": "",
+    "context": "Copied & saved",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Copied Anonymously",
+    "translation": "",
+    "context": "Copied Anonymously",
     "reference": "",
     "comment": ""
   },
@@ -4634,6 +5152,13 @@
     "comment": ""
   },
   {
+    "term": "Copied:",
+    "translation": "",
+    "context": "Copied:",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Copy",
     "translation": "",
     "context": "Copy",
@@ -4641,9 +5166,37 @@
     "comment": "Copy to clipboard"
   },
   {
+    "term": "Copy & Save",
+    "translation": "",
+    "context": "Copy & Save",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Copy (Ctrl+C) | Anonymous Copy (Ctrl+Shift+C)",
+    "translation": "",
+    "context": "Copy (Ctrl+C) | Anonymous Copy (Ctrl+Shift+C)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Copy Color",
+    "translation": "",
+    "context": "Copy Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Copy Content",
     "translation": "",
     "context": "Copy Content",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Copy Current Palette",
+    "translation": "",
+    "context": "Copy Current Palette",
     "reference": "",
     "comment": ""
   },
@@ -4683,6 +5236,13 @@
     "comment": ""
   },
   {
+    "term": "Copy and customize this preset",
+    "translation": "",
+    "context": "Copy and customize this preset",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Copy path",
     "translation": "",
     "context": "Copy path",
@@ -4697,11 +5257,18 @@
     "comment": "app picker copy target button tooltip"
   },
   {
+    "term": "Copy vector / Paste / Duplicate",
+    "translation": "",
+    "context": "Copy vector / Paste / Duplicate",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Corner Radius",
     "translation": "",
     "context": "Corner Radius",
     "reference": "",
-    "comment": "island settings: satellite goth corner radius slider"
+    "comment": "island settings: island corner radius slider"
   },
   {
     "term": "Corner Radius Override",
@@ -4737,6 +5304,13 @@
     "context": "Couldn't load hotspot password",
     "reference": "",
     "comment": "hotspot password error title"
+  },
+  {
+    "term": "Couldn't load plugins",
+    "translation": "",
+    "context": "Couldn't load plugins",
+    "reference": "",
+    "comment": "plugin registry fetch error"
   },
   {
     "term": "Count Only",
@@ -4865,6 +5439,20 @@
     "comment": ""
   },
   {
+    "term": "Crop / Resize",
+    "translation": "",
+    "context": "Crop / Resize",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Crop / Resize Area",
+    "translation": "",
+    "context": "Crop / Resize Area",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Ctrl + Shift",
     "translation": "",
     "context": "Ctrl + Shift",
@@ -4984,11 +5572,32 @@
     "comment": "Running apps filter: only show apps from the active workspace"
   },
   {
+    "term": "Current display brightness on the home face",
+    "translation": "",
+    "context": "Current display brightness on the home face",
+    "reference": "",
+    "comment": "island settings: brightness slot description"
+  },
+  {
+    "term": "Current output volume on the home face",
+    "translation": "",
+    "context": "Current output volume on the home face",
+    "reference": "",
+    "comment": "island settings: volume slot description"
+  },
+  {
     "term": "Current time and date display",
     "translation": "",
     "context": "Current time and date display",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Current time and date pill",
+    "translation": "",
+    "context": "Current time and date pill",
+    "reference": "",
+    "comment": "island settings: clock display mode description"
   },
   {
     "term": "Current weather conditions and temperature",
@@ -5057,6 +5666,13 @@
     "term": "Custom Color",
     "translation": "",
     "context": "Custom Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Custom Colors",
+    "translation": "",
+    "context": "Custom Colors",
     "reference": "",
     "comment": ""
   },
@@ -5141,6 +5757,13 @@
     "term": "Custom Suspend Command",
     "translation": "",
     "context": "Custom Suspend Command",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Custom Tool",
+    "translation": "",
+    "context": "Custom Tool",
     "reference": "",
     "comment": ""
   },
@@ -5362,9 +5985,9 @@
     "comment": ""
   },
   {
-    "term": "Dank Island - Beta",
+    "term": "Dank Island",
     "translation": "",
-    "context": "Dank Island - Beta",
+    "context": "Dank Island",
     "reference": "",
     "comment": "island settings: page title"
   },
@@ -5372,6 +5995,13 @@
     "term": "Dank Island instance",
     "translation": "",
     "context": "Dank Island instance",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dank Violet",
+    "translation": "",
+    "context": "Dank Violet",
     "reference": "",
     "comment": ""
   },
@@ -5404,16 +6034,16 @@
     "comment": ""
   },
   {
-    "term": "DankMaterialShell is ready to use",
-    "translation": "",
-    "context": "DankMaterialShell is ready to use",
-    "reference": "",
-    "comment": "greeter completion page subtitle"
-  },
-  {
     "term": "DankShell & System Icons (requires restart)",
     "translation": "",
     "context": "DankShell & System Icons (requires restart)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dark",
+    "translation": "",
+    "context": "Dark",
     "reference": "",
     "comment": ""
   },
@@ -5460,11 +6090,39 @@
     "comment": ""
   },
   {
+    "term": "Darken the image to improve foreground contrast",
+    "translation": "",
+    "context": "Darken the image to improve foreground contrast",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Darkest",
+    "translation": "",
+    "context": "Darkest",
+    "reference": "",
+    "comment": "matugen source color option"
+  },
+  {
     "term": "Dashboard",
     "translation": "",
     "context": "Dashboard",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Dashed Line",
+    "translation": "",
+    "context": "Dashed Line",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Date",
+    "translation": "",
+    "context": "Date",
+    "reference": "",
+    "comment": "island settings: clock shows date only"
   },
   {
     "term": "Date First",
@@ -5565,9 +6223,79 @@
     "comment": ""
   },
   {
+    "term": "Default Alignment",
+    "translation": "",
+    "context": "Default Alignment",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Default Apps",
     "translation": "",
     "context": "Default Apps",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Aspect Ratio",
+    "translation": "",
+    "context": "Default Aspect Ratio",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Background Image",
+    "translation": "",
+    "context": "Default Background Image",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Background Mode",
+    "translation": "",
+    "context": "Default Background Mode",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Bold Text",
+    "translation": "",
+    "context": "Default Bold Text",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Corner Radius",
+    "translation": "",
+    "context": "Default Corner Radius",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Gradient Angle",
+    "translation": "",
+    "context": "Default Gradient Angle",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Gradient End",
+    "translation": "",
+    "context": "Default Gradient End",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Gradient Start",
+    "translation": "",
+    "context": "Default Gradient Start",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Italic Text",
+    "translation": "",
+    "context": "Default Italic Text",
     "reference": "",
     "comment": ""
   },
@@ -5586,6 +6314,13 @@
     "comment": ""
   },
   {
+    "term": "Default Microphone",
+    "translation": "",
+    "context": "Default Microphone",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Default Mode",
     "translation": "",
     "context": "Default Mode",
@@ -5596,6 +6331,69 @@
     "term": "Default Opens",
     "translation": "",
     "context": "Default Opens",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Output",
+    "translation": "",
+    "context": "Default Output",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Padding",
+    "translation": "",
+    "context": "Default Padding",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Shadow Strength",
+    "translation": "",
+    "context": "Default Shadow Strength",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Solid Color",
+    "translation": "",
+    "context": "Default Solid Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Task List",
+    "translation": "",
+    "context": "Default Task List",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Text Background",
+    "translation": "",
+    "context": "Default Text Background",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Text Font Size",
+    "translation": "",
+    "context": "Default Text Font Size",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Underline Text",
+    "translation": "",
+    "context": "Default Underline Text",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Default Watermark",
+    "translation": "",
+    "context": "Default Watermark",
     "reference": "",
     "comment": ""
   },
@@ -5908,6 +6706,34 @@
     "comment": "island settings: dim surface tone"
   },
   {
+    "term": "Dim Background Image",
+    "translation": "",
+    "context": "Dim Background Image",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dim Intensity",
+    "translation": "",
+    "context": "Dim Intensity",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dimming Opacity",
+    "translation": "",
+    "context": "Dimming Opacity",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Direct",
+    "translation": "",
+    "context": "Direct",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Direct path to a .xkb keymap file. Overrides layouts/variants above.",
     "translation": "",
     "context": "Direct path to a .xkb keymap file. Overrides layouts/variants above.",
@@ -6006,6 +6832,13 @@
     "comment": ""
   },
   {
+    "term": "Disabling cellular...",
+    "translation": "",
+    "context": "Disabling cellular...",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Disc",
     "translation": "",
     "context": "Disc",
@@ -6016,6 +6849,20 @@
     "term": "Discard",
     "translation": "",
     "context": "Discard",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Discard & Close",
+    "translation": "",
+    "context": "Discard & Close",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Discard & Close (Esc)",
+    "translation": "",
+    "context": "Discard & Close (Esc)",
     "reference": "",
     "comment": ""
   },
@@ -6349,6 +7196,13 @@
     "comment": ""
   },
   {
+    "term": "Dominant",
+    "translation": "",
+    "context": "Dominant",
+    "reference": "",
+    "comment": "matugen source color option"
+  },
+  {
     "term": "Don't Change",
     "translation": "",
     "context": "Don't Change",
@@ -6363,9 +7217,44 @@
     "comment": ""
   },
   {
+    "term": "Done",
+    "translation": "",
+    "context": "Done",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Done (Action based on settings)",
+    "translation": "",
+    "context": "Done (Action based on settings)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Door Open",
     "translation": "",
     "context": "Door Open",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dotted Line",
+    "translation": "",
+    "context": "Dotted Line",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Dracula",
+    "translation": "",
+    "context": "Dracula",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Drag Image",
+    "translation": "",
+    "context": "Drag Image",
     "reference": "",
     "comment": ""
   },
@@ -6382,6 +7271,13 @@
     "context": "Drag a widget by its handle here to reorder it or drop it into another group",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Drag groups above the clock to sit left of it, below to sit right. Click the eye to hide a group.",
+    "translation": "",
+    "context": "Drag groups above the clock to sit left of it, below to sit right. Click the eye to hide a group.",
+    "reference": "",
+    "comment": "island settings: home layout editor hint"
   },
   {
     "term": "Drag to Reorder",
@@ -6412,18 +7308,18 @@
     "comment": ""
   },
   {
-    "term": "Draw a connected picture-frame border around the entire display",
-    "translation": "",
-    "context": "Draw a connected picture-frame border around the entire display",
-    "reference": "",
-    "comment": ""
-  },
-  {
     "term": "Draw an island-styled background behind satellite widgets",
     "translation": "",
     "context": "Draw an island-styled background behind satellite widgets",
     "reference": "",
     "comment": "island settings: satellite background description"
+  },
+  {
+    "term": "Draw an outer ring using the stamp number color",
+    "translation": "",
+    "context": "Draw an outer ring using the stamp number color",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Draw an outline and use the highest-contrast surface tone",
@@ -6450,6 +7346,13 @@
     "term": "Drop here",
     "translation": "",
     "context": "Drop here",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Drop image onto bar icon to annotate it",
+    "translation": "",
+    "context": "Drop image onto bar icon to annotate it",
     "reference": "",
     "comment": ""
   },
@@ -6552,6 +7455,13 @@
     "comment": "greeter theme description"
   },
   {
+    "term": "Each command accepts action: <b>edit</b> (open editor) or <b>float</b> (always-on-top window).",
+    "translation": "",
+    "context": "Each command accepts action: <b>edit</b> (open editor) or <b>float</b> (always-on-top window).",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Edge",
     "translation": "",
     "context": "Edge",
@@ -6608,9 +7518,30 @@
     "comment": ""
   },
   {
+    "term": "Edit Color Palette",
+    "translation": "",
+    "context": "Edit Color Palette",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Edit Image from Clipboard",
+    "translation": "",
+    "context": "Edit Image from Clipboard",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Edit Rule",
     "translation": "",
     "context": "Edit Rule",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Edit Text Note",
+    "translation": "",
+    "context": "Edit Text Note",
     "reference": "",
     "comment": ""
   },
@@ -6643,9 +7574,86 @@
     "comment": ""
   },
   {
+    "term": "Editor",
+    "translation": "",
+    "context": "Editor",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Editor Aspect Ratio",
+    "translation": "",
+    "context": "Editor Aspect Ratio",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Editor Display Mode",
+    "translation": "",
+    "context": "Editor Display Mode",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Editor Display Screen",
+    "translation": "",
+    "context": "Editor Display Screen",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Editor Preview Quality",
+    "translation": "",
+    "context": "Editor Preview Quality",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Education",
     "translation": "",
     "context": "Education",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Ellipse",
+    "translation": "",
+    "context": "Ellipse",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Ellipse / Circle",
+    "translation": "",
+    "context": "Ellipse / Circle",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Ellipse / Circle (Q)",
+    "translation": "",
+    "context": "Ellipse / Circle (Q)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Ellipse Color",
+    "translation": "",
+    "context": "Ellipse Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Ellipse Thickness",
+    "translation": "",
+    "context": "Ellipse Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Ellipse, Text, Pixelate, Redact (Q, W, E, R)",
+    "translation": "",
+    "context": "Ellipse, Text, Pixelate, Redact (Q, W, E, R)",
     "reference": "",
     "comment": ""
   },
@@ -6699,16 +7707,16 @@
     "comment": ""
   },
   {
-    "term": "Enable Do Not Disturb",
+    "term": "Enable Cellular",
     "translation": "",
-    "context": "Enable Do Not Disturb",
+    "context": "Enable Cellular",
     "reference": "",
     "comment": ""
   },
   {
-    "term": "Enable Frame",
+    "term": "Enable Do Not Disturb",
     "translation": "",
-    "context": "Enable Frame",
+    "context": "Enable Do Not Disturb",
     "reference": "",
     "comment": ""
   },
@@ -6790,6 +7798,13 @@
     "comment": ""
   },
   {
+    "term": "Enable background automatically when opening the editor",
+    "translation": "",
+    "context": "Enable background automatically when opening the editor",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.",
     "translation": "",
     "context": "Enable compositor-targetable blur layer (namespace: dms:blurwallpaper). Requires manual niri configuration.",
@@ -6858,6 +7873,13 @@
     "context": "Enabling WiFi...",
     "reference": "",
     "comment": "network status"
+  },
+  {
+    "term": "Enabling cellular...",
+    "translation": "",
+    "context": "Enabling cellular...",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "End",
@@ -7049,6 +8071,13 @@
     "comment": ""
   },
   {
+    "term": "Eraser",
+    "translation": "",
+    "context": "Eraser",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Error",
     "translation": "",
     "context": "Error",
@@ -7080,6 +8109,13 @@
     "term": "Event title",
     "translation": "",
     "context": "Event title",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Everforest",
+    "translation": "",
+    "context": "Everforest",
     "reference": "",
     "comment": ""
   },
@@ -7364,9 +8400,23 @@
     "comment": ""
   },
   {
+    "term": "Failed to convert recording to GIF.",
+    "translation": "",
+    "context": "Failed to convert recording to GIF.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Failed to copy entry",
     "translation": "",
     "context": "Failed to copy entry",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Failed to copy screenshot to clipboard.",
+    "translation": "",
+    "context": "Failed to copy screenshot to clipboard.",
     "reference": "",
     "comment": ""
   },
@@ -7493,6 +8543,13 @@
     "term": "Failed to generate QR code: %1",
     "translation": "",
     "context": "Failed to generate QR code: %1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Failed to generate blurred background image",
+    "translation": "",
+    "context": "Failed to generate blurred background image",
     "reference": "",
     "comment": ""
   },
@@ -7672,6 +8729,20 @@
     "comment": ""
   },
   {
+    "term": "Failed to save dropped file",
+    "translation": "",
+    "context": "Failed to save dropped file",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Failed to save dropped text",
+    "translation": "",
+    "context": "Failed to save dropped text",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Failed to save keybind",
     "translation": "",
     "context": "Failed to save keybind",
@@ -7682,6 +8753,20 @@
     "term": "Failed to save profile",
     "translation": "",
     "context": "Failed to save profile",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Failed to save screenshot",
+    "translation": "",
+    "context": "Failed to save screenshot",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Failed to save screenshot file.",
+    "translation": "",
+    "context": "Failed to save screenshot file.",
     "reference": "",
     "comment": ""
   },
@@ -7798,11 +8883,25 @@
     "comment": ""
   },
   {
+    "term": "Failed to switch output",
+    "translation": "",
+    "context": "Failed to switch output",
+    "reference": "",
+    "comment": "audio card profile switch failure message"
+  },
+  {
     "term": "Failed to switch port",
     "translation": "",
     "context": "Failed to switch port",
     "reference": "",
     "comment": "audio sink port switch failure message"
+  },
+  {
+    "term": "Failed to toggle cellular",
+    "translation": "",
+    "context": "Failed to toggle cellular",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Failed to unpin entry",
@@ -8113,6 +9212,20 @@
     "comment": ""
   },
   {
+    "term": "Flip Horiz",
+    "translation": "",
+    "context": "Flip Horiz",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Flip Vert",
+    "translation": "",
+    "context": "Flip Vert",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Flipped",
     "translation": "",
     "context": "Flipped",
@@ -8151,6 +9264,20 @@
     "term": "Float Anchor",
     "translation": "",
     "context": "Float Anchor",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Float Image",
+    "translation": "",
+    "context": "Float Image",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Float Window",
+    "translation": "",
+    "context": "Float Window",
     "reference": "",
     "comment": ""
   },
@@ -8281,6 +9408,13 @@
     "comment": ""
   },
   {
+    "term": "Focused Screen",
+    "translation": "",
+    "context": "Focused Screen",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Focused Window",
     "translation": "",
     "context": "Focused Window",
@@ -8330,6 +9464,13 @@
     "comment": ""
   },
   {
+    "term": "Follow the theme accent, or step from green to red as the battery drains.",
+    "translation": "",
+    "context": "Follow the theme accent, or step from green to red as the battery drains.",
+    "reference": "",
+    "comment": "battery settings: indicator color mode description"
+  },
+  {
     "term": "Follows the default launcher choice selected above.",
     "translation": "",
     "context": "Follows the default launcher choice selected above.",
@@ -8368,6 +9509,13 @@
     "term": "Font Weight",
     "translation": "",
     "context": "Font Weight",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Font family used for number stamp labels",
+    "translation": "",
+    "context": "Font family used for number stamp labels",
     "reference": "",
     "comment": ""
   },
@@ -8428,6 +9576,20 @@
     "comment": "For editing plain text files"
   },
   {
+    "term": "Force Copy & Save",
+    "translation": "",
+    "context": "Force Copy & Save",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Force Copy to Clipboard",
+    "translation": "",
+    "context": "Force Copy to Clipboard",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Force HDR",
     "translation": "",
     "context": "Force HDR",
@@ -8452,6 +9614,13 @@
     "term": "Force RGBX",
     "translation": "",
     "context": "Force RGBX",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Force Save to File",
+    "translation": "",
+    "context": "Force Save to File",
     "reference": "",
     "comment": ""
   },
@@ -8568,6 +9737,20 @@
     "comment": ""
   },
   {
+    "term": "Format tokens: %Y (Year), %y (2-digit year), %m (Month), %d (Day), %H (Hour), %M (Minute), %S (Second), {zzz} (Ms)",
+    "translation": "",
+    "context": "Format tokens: %Y (Year), %y (2-digit year), %m (Month), %d (Day), %H (Hour), %M (Minute), %S (Second), {zzz} (Ms)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Format tokens: {user} (Username), \\n (New Line), %Y (Year), %y (2-digit year), %m (Month), %d (Day), %H (Hour), %M (Minute), %S (Second)",
+    "translation": "",
+    "context": "Format tokens: {user} (Username), \\n (New Line), %Y (Year), %y (2-digit year), %m (Month), %d (Day), %H (Hour), %M (Minute), %S (Second)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Forward 10s",
     "translation": "",
     "context": "Forward 10s",
@@ -8610,9 +9793,37 @@
     "comment": ""
   },
   {
+    "term": "Framerate",
+    "translation": "",
+    "context": "Framerate",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Free",
+    "translation": "",
+    "context": "Free",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Free VRAM/memory when the launcher is closed. May cause a slight delay when reopening.",
     "translation": "",
     "context": "Free VRAM/memory when the launcher is closed. May cause a slight delay when reopening.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Freehand Pen",
+    "translation": "",
+    "context": "Freehand Pen",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Freehand Pen (1)",
+    "translation": "",
+    "context": "Freehand Pen (1)",
     "reference": "",
     "comment": ""
   },
@@ -8627,6 +9838,20 @@
     "term": "Frequency",
     "translation": "",
     "context": "Frequency",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "From Clipboard",
+    "translation": "",
+    "context": "From Clipboard",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "From File",
+    "translation": "",
+    "context": "From File",
     "reference": "",
     "comment": ""
   },
@@ -8664,6 +9889,20 @@
     "context": "Full Day & Month",
     "reference": "",
     "comment": "date format option"
+  },
+  {
+    "term": "Full Screen",
+    "translation": "",
+    "context": "Full Screen",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Full Screen Target",
+    "translation": "",
+    "context": "Full Screen Target",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Full Size",
@@ -8708,11 +9947,11 @@
     "comment": "battery status"
   },
   {
-    "term": "G: grid • Z/X: size",
+    "term": "GIF Framerate",
     "translation": "",
-    "context": "G: grid • Z/X: size",
+    "context": "GIF Framerate",
     "reference": "",
-    "comment": "Widget grid keyboard hints"
+    "comment": ""
   },
   {
     "term": "GPU",
@@ -8750,16 +9989,16 @@
     "comment": ""
   },
   {
-    "term": "GTK, Qt, IDEs, more",
-    "translation": "",
-    "context": "GTK, Qt, IDEs, more",
-    "reference": "",
-    "comment": "greeter feature card description"
-  },
-  {
     "term": "Games",
     "translation": "",
     "context": "Games",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Gamma",
+    "translation": "",
+    "context": "Gamma",
     "reference": "",
     "comment": ""
   },
@@ -8795,6 +10034,13 @@
     "term": "General",
     "translation": "",
     "context": "General",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "General Shortcuts",
+    "translation": "",
+    "context": "General Shortcuts",
     "reference": "",
     "comment": ""
   },
@@ -8880,7 +10126,7 @@
     "translation": "",
     "context": "Goth Corner Radius",
     "reference": "",
-    "comment": ""
+    "comment": "island settings: satellite goth corner radius slider"
   },
   {
     "term": "Goth Corners",
@@ -9072,6 +10318,13 @@
     "comment": ""
   },
   {
+    "term": "Gruvbox Material",
+    "translation": "",
+    "context": "Gruvbox Material",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "H",
     "translation": "",
     "context": "H",
@@ -9216,14 +10469,14 @@
     "translation": "",
     "context": "Hidden",
     "reference": "",
-    "comment": "island settings: battery or control center slot hidden | island settings: media or launcher slot hidden | island settings: weather slot hidden"
+    "comment": ""
   },
   {
     "term": "Hidden (%1)",
     "translation": "",
     "context": "Hidden (%1)",
     "reference": "",
-    "comment": "count of hidden audio devices"
+    "comment": "count of hidden audio devices | island settings: hidden groups divider, %1 is count"
   },
   {
     "term": "Hidden Apps",
@@ -9251,7 +10504,7 @@
     "translation": "",
     "context": "Hide",
     "reference": "",
-    "comment": ""
+    "comment": "island settings: hide home group"
   },
   {
     "term": "Hide 3rd Party",
@@ -9264,6 +10517,20 @@
     "term": "Hide App",
     "translation": "",
     "context": "Hide App",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Hide Control Center",
+    "translation": "",
+    "context": "Hide Control Center",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Hide Control Center by Default",
+    "translation": "",
+    "context": "Hide Control Center by Default",
     "reference": "",
     "comment": ""
   },
@@ -9422,6 +10689,34 @@
     "comment": ""
   },
   {
+    "term": "Highlighter",
+    "translation": "",
+    "context": "Highlighter",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Highlighter (S)",
+    "translation": "",
+    "context": "Highlighter (S)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Highlighter Color",
+    "translation": "",
+    "context": "Highlighter Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Highlighter Thickness",
+    "translation": "",
+    "context": "Highlighter Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "History",
     "translation": "",
     "context": "History",
@@ -9490,6 +10785,13 @@
     "context": "Home Compact",
     "reference": "",
     "comment": "island settings: home face card title"
+  },
+  {
+    "term": "Horizontal",
+    "translation": "",
+    "context": "Horizontal",
+    "reference": "",
+    "comment": "lock screen clock style option"
   },
   {
     "term": "Horizontal Offset",
@@ -9600,6 +10902,13 @@
     "term": "Hover Popouts",
     "translation": "",
     "context": "Hover Popouts",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Hover Trigger Delay",
+    "translation": "",
+    "context": "Hover Trigger Delay",
     "reference": "",
     "comment": ""
   },
@@ -9737,6 +11046,13 @@
     "comment": "hotspot IP configuration failure message"
   },
   {
+    "term": "IPC Commands",
+    "translation": "",
+    "context": "IPC Commands",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "ISO Date",
     "translation": "",
     "context": "ISO Date",
@@ -9748,7 +11064,7 @@
     "translation": "",
     "context": "Icon",
     "reference": "",
-    "comment": ""
+    "comment": "battery widget: system battery glyph | island settings: level shown as icon only"
   },
   {
     "term": "Icon Scale",
@@ -9919,6 +11235,34 @@
     "comment": ""
   },
   {
+    "term": "Image + Text",
+    "translation": "",
+    "context": "Image + Text",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Image Background",
+    "translation": "",
+    "context": "Image Background",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Image Error",
+    "translation": "",
+    "context": "Image Error",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Image Size",
+    "translation": "",
+    "context": "Image Size",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Image Viewer",
     "translation": "",
     "context": "Image Viewer",
@@ -9929,6 +11273,13 @@
     "term": "Image copied to clipboard",
     "translation": "",
     "context": "Image copied to clipboard",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Image selected automatically when using Image Background mode",
+    "translation": "",
+    "context": "Image selected automatically when using Image Background mode",
     "reference": "",
     "comment": ""
   },
@@ -9961,6 +11312,13 @@
     "comment": ""
   },
   {
+    "term": "Include Cursor",
+    "translation": "",
+    "context": "Include Cursor",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Include Files in All Tab",
     "translation": "",
     "context": "Include Files in All Tab",
@@ -9985,6 +11343,13 @@
     "term": "Include Transitions",
     "translation": "",
     "context": "Include Transitions",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Include application streams and virtual sinks in the device lists",
+    "translation": "",
+    "context": "Include application streams and virtual sinks in the device lists",
     "reference": "",
     "comment": ""
   },
@@ -10022,6 +11387,13 @@
     "context": "Index Centering",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Indicator Colors",
+    "translation": "",
+    "context": "Indicator Colors",
+    "reference": "",
+    "comment": "battery settings: battery indicator color mode"
   },
   {
     "term": "Indicator Style",
@@ -10073,9 +11445,23 @@
     "comment": ""
   },
   {
+    "term": "Initial Width",
+    "translation": "",
+    "context": "Initial Width",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Initial position for floating windows. Set both X and Y; anchor controls which corner/edge they're relative to.",
     "translation": "",
     "context": "Initial position for floating windows. Set both X and Y; anchor controls which corner/edge they're relative to.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Initial state for the Control Center toggle.",
+    "translation": "",
+    "context": "Initial state for the Control Center toggle.",
     "reference": "",
     "comment": ""
   },
@@ -10115,9 +11501,23 @@
     "comment": ""
   },
   {
+    "term": "Input Mode",
+    "translation": "",
+    "context": "Input Mode",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Input Volume Slider",
     "translation": "",
     "context": "Input Volume Slider",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Insert Image",
+    "translation": "",
+    "context": "Insert Image",
     "reference": "",
     "comment": ""
   },
@@ -10262,6 +11662,20 @@
     "comment": "shadow intensity slider"
   },
   {
+    "term": "Interaction / Result",
+    "translation": "",
+    "context": "Interaction / Result",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Interactive Region",
+    "translation": "",
+    "context": "Interactive Region",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Interface:",
     "translation": "",
     "context": "Interface:",
@@ -10357,7 +11771,7 @@
     "translation": "",
     "context": "Island Instance",
     "reference": "",
-    "comment": "island settings: which bar config the island replaces"
+    "comment": "island settings: which island instance these settings edit"
   },
   {
     "term": "Island placement",
@@ -10370,6 +11784,13 @@
     "term": "Isolate Displays",
     "translation": "",
     "context": "Isolate Displays",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "JPEG Quality",
+    "translation": "",
+    "context": "JPEG Quality",
     "reference": "",
     "comment": ""
   },
@@ -10398,6 +11819,13 @@
     "term": "Jump to page (1 - %1)",
     "translation": "",
     "context": "Jump to page (1 - %1)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Kanagawa",
+    "translation": "",
+    "context": "Kanagawa",
     "reference": "",
     "comment": ""
   },
@@ -10456,6 +11884,13 @@
     "context": "Keep the clipboard type filter when reopening history",
     "reference": "",
     "comment": "Clipboard behavior setting description"
+  },
+  {
+    "term": "Keep the dock visible above fullscreen applications",
+    "translation": "",
+    "context": "Keep the dock visible above fullscreen applications",
+    "reference": "",
+    "comment": "dock visibility toggle description"
   },
   {
     "term": "Keep typing",
@@ -10647,6 +12082,13 @@
     "comment": ""
   },
   {
+    "term": "Landscape",
+    "translation": "",
+    "context": "Landscape",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Large",
     "translation": "",
     "context": "Large",
@@ -10657,6 +12099,27 @@
     "term": "Largest",
     "translation": "",
     "context": "Largest",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Last Reg",
+    "translation": "",
+    "context": "Last Reg",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Last Region",
+    "translation": "",
+    "context": "Last Region",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Last Selected Region",
+    "translation": "",
+    "context": "Last Selected Region",
     "reference": "",
     "comment": ""
   },
@@ -10801,11 +12264,18 @@
     "comment": ""
   },
   {
+    "term": "Least Saturated",
+    "translation": "",
+    "context": "Least Saturated",
+    "reference": "",
+    "comment": "matugen source color option"
+  },
+  {
     "term": "Left",
     "translation": "",
     "context": "Left",
     "reference": "",
-    "comment": "island settings: battery or control center slot left of the clock | island settings: media or launcher slot left of the clock | island settings: weather slot left of the clock | screen edge position"
+    "comment": "screen edge position"
   },
   {
     "term": "Left Center",
@@ -10813,6 +12283,13 @@
     "context": "Left Center",
     "reference": "",
     "comment": "screen position option"
+  },
+  {
+    "term": "Left Click",
+    "translation": "",
+    "context": "Left Click",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Left Section",
@@ -10827,6 +12304,13 @@
     "context": "Left-Handed Mode",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Level",
+    "translation": "",
+    "context": "Level",
+    "reference": "",
+    "comment": "battery settings: charge level indicator colors"
   },
   {
     "term": "Light",
@@ -10892,6 +12376,13 @@
     "comment": ""
   },
   {
+    "term": "Lightest",
+    "translation": "",
+    "context": "Lightest",
+    "reference": "",
+    "comment": "matugen source color option"
+  },
+  {
     "term": "Limit set to %1%",
     "translation": "",
     "context": "Limit set to %1%",
@@ -10913,6 +12404,20 @@
     "comment": "dock indicator style option"
   },
   {
+    "term": "Line Color",
+    "translation": "",
+    "context": "Line Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Line Thickness",
+    "translation": "",
+    "context": "Line Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Line: %1",
     "translation": "",
     "context": "Line: %1",
@@ -10927,6 +12432,13 @@
     "comment": ""
   },
   {
+    "term": "Linear Gradient",
+    "translation": "",
+    "context": "Linear Gradient",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Lines: %1",
     "translation": "",
     "context": "Lines: %1",
@@ -10937,6 +12449,13 @@
     "term": "List",
     "translation": "",
     "context": "List",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Live Preview",
+    "translation": "",
+    "context": "Live Preview",
     "reference": "",
     "comment": ""
   },
@@ -10958,6 +12477,13 @@
     "term": "Loading codecs...",
     "translation": "",
     "context": "Loading codecs...",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Loading contributors...",
+    "translation": "",
+    "context": "Loading contributors...",
     "reference": "",
     "comment": ""
   },
@@ -11036,7 +12562,7 @@
     "translation": "",
     "context": "Lock Screen",
     "reference": "",
-    "comment": "greeter feature card title | lock screen notifications settings card"
+    "comment": "lock screen notifications settings card"
   },
   {
     "term": "Lock Screen Format",
@@ -11182,6 +12708,13 @@
     "term": "MTU",
     "translation": "",
     "context": "MTU",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Magnifier Loupe",
+    "translation": "",
+    "context": "Magnifier Loupe",
     "reference": "",
     "comment": ""
   },
@@ -11417,13 +12950,6 @@
     "comment": ""
   },
   {
-    "term": "Material Battery Style",
-    "translation": "",
-    "context": "Material Battery Style",
-    "reference": "",
-    "comment": "island settings: battery meter style row"
-  },
-  {
     "term": "Material Colors",
     "translation": "",
     "context": "Material Colors",
@@ -11497,6 +13023,13 @@
     "term": "Max H",
     "translation": "",
     "context": "Max H",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Max Height (0 = no limit)",
+    "translation": "",
+    "context": "Max Height (0 = no limit)",
     "reference": "",
     "comment": ""
   },
@@ -11760,6 +13293,13 @@
     "comment": ""
   },
   {
+    "term": "Menu Item Right Click",
+    "translation": "",
+    "context": "Menu Item Right Click",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Merge indexed file results into the All tab (requires dsearch).",
     "translation": "",
     "context": "Merge indexed file results into the All tab (requires dsearch).",
@@ -11770,6 +13310,13 @@
     "term": "Merge indexed folder results into the All tab (requires dsearch).",
     "translation": "",
     "context": "Merge indexed folder results into the All tab (requires dsearch).",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Merging audio tracks...",
+    "translation": "",
+    "context": "Merging audio tracks...",
     "reference": "",
     "comment": ""
   },
@@ -11791,6 +13338,13 @@
     "term": "Microphone",
     "translation": "",
     "context": "Microphone",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Microphone Device",
+    "translation": "",
+    "context": "Microphone Device",
     "reference": "",
     "comment": ""
   },
@@ -11819,6 +13373,20 @@
     "term": "Microphone volume control",
     "translation": "",
     "context": "Microphone volume control",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Middle Click",
+    "translation": "",
+    "context": "Middle Click",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Middle Click Action",
+    "translation": "",
+    "context": "Middle Click Action",
     "reference": "",
     "comment": ""
   },
@@ -11865,6 +13433,13 @@
     "comment": ""
   },
   {
+    "term": "Minimize Delay",
+    "translation": "",
+    "context": "Minimize Delay",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Minute",
     "translation": "",
     "context": "Minute",
@@ -11884,6 +13459,13 @@
     "context": "Missing Environment Variables",
     "reference": "",
     "comment": "qt theme env error title"
+  },
+  {
+    "term": "Modal",
+    "translation": "",
+    "context": "Modal",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Modal Background",
@@ -11998,11 +13580,32 @@
     "comment": "date format option"
   },
   {
+    "term": "More Tools",
+    "translation": "",
+    "context": "More Tools",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Morning",
     "translation": "",
     "context": "Morning",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Most Saturated",
+    "translation": "",
+    "context": "Most Saturated",
+    "reference": "",
+    "comment": "matugen source color option"
+  },
+  {
+    "term": "Most Vivid",
+    "translation": "",
+    "context": "Most Vivid",
+    "reference": "",
+    "comment": "matugen source color option"
   },
   {
     "term": "Motion",
@@ -12080,6 +13683,13 @@
     "context": "Move island and satellites left or right from display center",
     "reference": "",
     "comment": "island settings: horizontal offset description"
+  },
+  {
+    "term": "Move island and satellites up or down from display center",
+    "translation": "",
+    "context": "Move island and satellites up or down from display center",
+    "reference": "",
+    "comment": "island settings: vertical offset description"
   },
   {
     "term": "Moving to Paused",
@@ -12425,6 +14035,13 @@
     "comment": ""
   },
   {
+    "term": "Niri Binding Example",
+    "translation": "",
+    "context": "Niri Binding Example",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Niri Integration",
     "translation": "",
     "context": "Niri Integration",
@@ -12443,7 +14060,7 @@
     "translation": "",
     "context": "No Active Players",
     "reference": "",
-    "comment": "island media player: empty state"
+    "comment": ""
   },
   {
     "term": "No Anim",
@@ -12521,6 +14138,13 @@
     "context": "No History",
     "reference": "",
     "comment": "notification rule action option"
+  },
+  {
+    "term": "No Image Specified",
+    "translation": "",
+    "context": "No Image Specified",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "No Media",
@@ -12915,6 +14539,13 @@
     "comment": ""
   },
   {
+    "term": "No output available",
+    "translation": "",
+    "context": "No output available",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "No output device",
     "translation": "",
     "context": "No output device",
@@ -13027,6 +14658,13 @@
     "comment": ""
   },
   {
+    "term": "No saved images yet",
+    "translation": "",
+    "context": "No saved images yet",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "No screenshot provided",
     "translation": "",
     "context": "No screenshot provided",
@@ -13051,6 +14689,13 @@
     "term": "No status output.",
     "translation": "",
     "context": "No status output.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "No supported images found",
+    "translation": "",
+    "context": "No supported images found",
     "reference": "",
     "comment": ""
   },
@@ -13181,9 +14826,23 @@
     "comment": "Tailscale exit node: none selected | wallpaper transition option | workspace color option"
   },
   {
+    "term": "None / Disabled",
+    "translation": "",
+    "context": "None / Disabled",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "None active",
     "translation": "",
     "context": "None active",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Nord",
+    "translation": "",
+    "context": "Nord",
     "reference": "",
     "comment": ""
   },
@@ -13286,6 +14945,13 @@
     "comment": "wallpaper not set label"
   },
   {
+    "term": "Note: Starting tool mode overrides tool thickness and color defaults if the starting tool matches it.",
+    "translation": "",
+    "context": "Note: Starting tool mode overrides tool thickness and color defaults if the starting tool matches it.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Notepad",
     "translation": "",
     "context": "Notepad",
@@ -13381,7 +15047,7 @@
     "translation": "",
     "context": "Notifications",
     "reference": "",
-    "comment": "KDE Connect notifications label | greeter settings link | island compact face: notification center label | island settings: notifications card title"
+    "comment": "KDE Connect notifications label | greeter settings link | island compact face: notification center label | island settings: notification badge slot row | island settings: notifications card title"
   },
   {
     "term": "Notify when limit is reached",
@@ -13398,6 +15064,13 @@
     "comment": ""
   },
   {
+    "term": "Number Stamp",
+    "translation": "",
+    "context": "Number Stamp",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Numeric (D/M)",
     "translation": "",
     "context": "Numeric (D/M)",
@@ -13410,6 +15083,27 @@
     "context": "Numeric (M/D)",
     "reference": "",
     "comment": "date format option"
+  },
+  {
+    "term": "OCR",
+    "translation": "",
+    "context": "OCR",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "OCR Result",
+    "translation": "",
+    "context": "OCR Result",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "OCR Text Recognition",
+    "translation": "",
+    "context": "OCR Text Recognition",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "OK",
@@ -13444,7 +15138,7 @@
     "translation": "",
     "context": "Off",
     "reference": "",
-    "comment": "bluetooth status | island instance choice: island disabled"
+    "comment": "bluetooth status"
   },
   {
     "term": "Office",
@@ -13636,6 +15330,13 @@
     "comment": ""
   },
   {
+    "term": "Open Folder",
+    "translation": "",
+    "context": "Open Folder",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Open Frame",
     "translation": "",
     "context": "Open Frame",
@@ -13660,6 +15361,20 @@
     "term": "Open Notepad File",
     "translation": "",
     "context": "Open Notepad File",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Open Quick Capture menu (Popout)",
+    "translation": "",
+    "context": "Open Quick Capture menu (Popout)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Open Specific Image Path",
+    "translation": "",
+    "context": "Open Specific Image Path",
     "reference": "",
     "comment": ""
   },
@@ -13874,6 +15589,13 @@
     "comment": "island settings: outlined battery meter style | outline color | surface border color"
   },
   {
+    "term": "Outline Variant",
+    "translation": "",
+    "context": "Outline Variant",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Outline around shell surfaces",
     "translation": "",
     "context": "Outline around shell surfaces",
@@ -13909,9 +15631,37 @@
     "comment": "Audio settings: speaker/headphone devices"
   },
   {
+    "term": "Output Format",
+    "translation": "",
+    "context": "Output Format",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Output Tray Missing",
     "translation": "",
     "context": "Output Tray Missing",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Output format applies only to disk saves. Clipboard copies are always PNG.",
+    "translation": "",
+    "context": "Output format applies only to disk saves. Clipboard copies are always PNG.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Output switched",
+    "translation": "",
+    "context": "Output switched",
+    "reference": "",
+    "comment": "audio card profile switched successful message"
+  },
+  {
+    "term": "Outputs",
+    "translation": "",
+    "context": "Outputs",
     "reference": "",
     "comment": ""
   },
@@ -13935,6 +15685,13 @@
     "context": "Overlay",
     "reference": "",
     "comment": "widget background color option"
+  },
+  {
+    "term": "Overlay Opacity",
+    "translation": "",
+    "context": "Overlay Opacity",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Overridden by config",
@@ -14042,6 +15799,13 @@
     "comment": "greeter security key login setting"
   },
   {
+    "term": "PAUSED",
+    "translation": "",
+    "context": "PAUSED",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "PDF Reader",
     "translation": "",
     "context": "PDF Reader",
@@ -14059,6 +15823,13 @@
     "term": "PIN",
     "translation": "",
     "context": "PIN",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "PRIMARY",
+    "translation": "",
+    "context": "PRIMARY",
     "reference": "",
     "comment": ""
   },
@@ -14154,6 +15925,13 @@
     "comment": "island settings: surface tone choice"
   },
   {
+    "term": "Palette Preset",
+    "translation": "",
+    "context": "Palette Preset",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Panels glide in from a larger distance at full size, no scale change, pure clean motion.",
     "translation": "",
     "context": "Panels glide in from a larger distance at full size, no scale change, pure clean motion.",
@@ -14166,13 +15944,6 @@
     "context": "Panels scale up from small as they slide in, a dramatic pop-forward depth effect.",
     "reference": "",
     "comment": ""
-  },
-  {
-    "term": "Partial",
-    "translation": "",
-    "context": "Partial",
-    "reference": "",
-    "comment": "contrast badge suffix: only some variants pass"
   },
   {
     "term": "Partly Cloudy",
@@ -14208,6 +15979,13 @@
     "context": "Password change failed (exit %1)",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Password must be 8 to 63 characters, or a 64-digit hex key.",
+    "translation": "",
+    "context": "Password must be 8 to 63 characters, or a 64-digit hex key.",
+    "reference": "",
+    "comment": "hotspot password length requirement"
   },
   {
     "term": "Password set",
@@ -14273,9 +16051,44 @@
     "comment": "Media pause tooltip"
   },
   {
+    "term": "Pause / Resume",
+    "translation": "",
+    "context": "Pause / Resume",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Paused",
     "translation": "",
     "context": "Paused",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Pen Auto-Close",
+    "translation": "",
+    "context": "Pen Auto-Close",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Pen Color",
+    "translation": "",
+    "context": "Pen Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Pen Thickness",
+    "translation": "",
+    "context": "Pen Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Pen, Line, Arrow, Rect",
+    "translation": "",
+    "context": "Pen, Line, Arrow, Rect",
     "reference": "",
     "comment": ""
   },
@@ -14333,7 +16146,7 @@
     "translation": "",
     "context": "Percentage",
     "reference": "",
-    "comment": ""
+    "comment": "island settings: level shown as percentage only"
   },
   {
     "term": "Performance",
@@ -14378,6 +16191,13 @@
     "comment": "KDE Connect SMS phone input placeholder"
   },
   {
+    "term": "Pick Color",
+    "translation": "",
+    "context": "Pick Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Pick a different file manager in Settings → Dock → Trash.",
     "translation": "",
     "context": "Pick a different file manager in Settings → Dock → Trash.",
@@ -14388,6 +16208,13 @@
     "term": "Pick a different random video each time from the same folder",
     "translation": "",
     "context": "Pick a different random video each time from the same folder",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Pick a palette preset or customize individual color slots.",
+    "translation": "",
+    "context": "Pick a palette preset or customize individual color slots.",
     "reference": "",
     "comment": ""
   },
@@ -14441,11 +16268,32 @@
     "comment": ""
   },
   {
+    "term": "Pixel Intensity",
+    "translation": "",
+    "context": "Pixel Intensity",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Pixelate",
     "translation": "",
     "context": "Pixelate",
     "reference": "",
     "comment": "wallpaper transition option"
+  },
+  {
+    "term": "Pixelate (E)",
+    "translation": "",
+    "context": "Pixelate (E)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Pixelate Intensity",
+    "translation": "",
+    "context": "Pixelate Intensity",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Place a trash bin at the end of the dock",
@@ -14676,7 +16524,7 @@
     "translation": "",
     "context": "Plugins",
     "reference": "",
-    "comment": "greeter feature card title | greeter plugins link"
+    "comment": "greeter feature card title"
   },
   {
     "term": "Pointer",
@@ -14724,6 +16572,20 @@
     "term": "Popouts and Modals follow global Animation Speed (disable to customize independently)",
     "translation": "",
     "context": "Popouts and Modals follow global Animation Speed (disable to customize independently)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Popular Plugins",
+    "translation": "",
+    "context": "Popular Plugins",
+    "reference": "",
+    "comment": "greeter plugins page title"
+  },
+  {
+    "term": "Popup Input",
+    "translation": "",
+    "context": "Popup Input",
     "reference": "",
     "comment": ""
   },
@@ -14791,6 +16653,13 @@
     "comment": "wallpaper transition option"
   },
   {
+    "term": "Portrait",
+    "translation": "",
+    "context": "Portrait",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Position",
     "translation": "",
     "context": "Position",
@@ -14808,6 +16677,13 @@
     "term": "Possible Override Conflicts",
     "translation": "",
     "context": "Possible Override Conflicts",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Post-Capture Notification",
+    "translation": "",
+    "context": "Post-Capture Notification",
     "reference": "",
     "comment": ""
   },
@@ -14952,6 +16828,90 @@
     "comment": ""
   },
   {
+    "term": "Preset %1",
+    "translation": "",
+    "context": "Preset %1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 1",
+    "translation": "",
+    "context": "Preset 1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 2",
+    "translation": "",
+    "context": "Preset 2",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 3",
+    "translation": "",
+    "context": "Preset 3",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 4",
+    "translation": "",
+    "context": "Preset 4",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 5",
+    "translation": "",
+    "context": "Preset 5",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 6",
+    "translation": "",
+    "context": "Preset 6",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 7",
+    "translation": "",
+    "context": "Preset 7",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset 8",
+    "translation": "",
+    "context": "Preset 8",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset Color",
+    "translation": "",
+    "context": "Preset Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset Thickness",
+    "translation": "",
+    "context": "Preset Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Preset Tool",
+    "translation": "",
+    "context": "Preset Tool",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Preset Widths (%)",
     "translation": "",
     "context": "Preset Widths (%)",
@@ -15064,18 +17024,18 @@
     "comment": ""
   },
   {
-    "term": "Primary Bar",
-    "translation": "",
-    "context": "Primary Bar",
-    "reference": "",
-    "comment": ""
-  },
-  {
     "term": "Primary Container",
     "translation": "",
     "context": "Primary Container",
     "reference": "",
     "comment": "button color option | tile color option | widget background color option | workspace color option"
+  },
+  {
+    "term": "Primary Screen",
+    "translation": "",
+    "context": "Primary Screen",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Print Server Management",
@@ -15302,6 +17262,13 @@
     "comment": ""
   },
   {
+    "term": "QR Result",
+    "translation": "",
+    "context": "QR Result",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Qt",
     "translation": "",
     "context": "Qt",
@@ -15333,6 +17300,20 @@
     "term": "Quality",
     "translation": "",
     "context": "Quality",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Quick Capture",
+    "translation": "",
+    "context": "Quick Capture",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Quick Capture Error",
+    "translation": "",
+    "context": "Quick Capture Error",
     "reference": "",
     "comment": ""
   },
@@ -15372,9 +17353,51 @@
     "comment": "greeter feature card description"
   },
   {
+    "term": "RECORDING",
+    "translation": "",
+    "context": "RECORDING",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "RGB",
     "translation": "",
     "context": "RGB",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Radial Gradient",
+    "translation": "",
+    "context": "Radial Gradient",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Radial Menu",
+    "translation": "",
+    "context": "Radial Menu",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Radial Menu Opacity",
+    "translation": "",
+    "context": "Radial Menu Opacity",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Radial Menu Settings",
+    "translation": "",
+    "context": "Radial Menu Settings",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Radial Preset",
+    "translation": "",
+    "context": "Radial Preset",
     "reference": "",
     "comment": ""
   },
@@ -15424,6 +17447,13 @@
     "term": "Rate",
     "translation": "",
     "context": "Rate",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Ratio",
+    "translation": "",
+    "context": "Ratio",
     "reference": "",
     "comment": ""
   },
@@ -15498,6 +17528,13 @@
     "comment": ""
   },
   {
+    "term": "Recent Edits",
+    "translation": "",
+    "context": "Recent Edits",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Recent Images",
     "translation": "",
     "context": "Recent Images",
@@ -15515,6 +17552,132 @@
     "term": "Recommended available",
     "translation": "",
     "context": "Recommended available",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Record Microphone",
+    "translation": "",
+    "context": "Record Microphone",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Record Mouse Cursor",
+    "translation": "",
+    "context": "Record Mouse Cursor",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Record System Audio",
+    "translation": "",
+    "context": "Record System Audio",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Recording",
+    "translation": "",
+    "context": "Recording",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Recording Folder",
+    "translation": "",
+    "context": "Recording Folder",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Recording ended with error code %1.",
+    "translation": "",
+    "context": "Recording ended with error code %1.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Recording...",
+    "translation": "",
+    "context": "Recording...",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Recordings Directory",
+    "translation": "",
+    "context": "Recordings Directory",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Rectangle",
+    "translation": "",
+    "context": "Rectangle",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Rectangle Color",
+    "translation": "",
+    "context": "Rectangle Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Rectangle Outline",
+    "translation": "",
+    "context": "Rectangle Outline",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Rectangle Outline (4)",
+    "translation": "",
+    "context": "Rectangle Outline (4)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Rectangle Thickness",
+    "translation": "",
+    "context": "Rectangle Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Redact",
+    "translation": "",
+    "context": "Redact",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Redact (R)",
+    "translation": "",
+    "context": "Redact (R)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Redact Thickness",
+    "translation": "",
+    "context": "Redact Thickness",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Redo (Ctrl+Y / Ctrl+Shift+Z)",
+    "translation": "",
+    "context": "Redo (Ctrl+Y / Ctrl+Shift+Z)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Redo last undone stroke",
+    "translation": "",
+    "context": "Redo last undone stroke",
     "reference": "",
     "comment": ""
   },
@@ -15559,6 +17722,13 @@
     "context": "Regex",
     "reference": "",
     "comment": "notification rule match type option"
+  },
+  {
+    "term": "Region",
+    "translation": "",
+    "context": "Region",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Registries",
@@ -15890,6 +18060,13 @@
     "comment": ""
   },
   {
+    "term": "Requires Bar Shadows to be enabled in Theme & Colors.",
+    "translation": "",
+    "context": "Requires Bar Shadows to be enabled in Theme & Colors.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Requires DMS %1",
     "translation": "",
     "context": "Requires DMS %1",
@@ -15953,9 +18130,23 @@
     "comment": "island settings: reserved strip height slider"
   },
   {
+    "term": "Reserved Width",
+    "translation": "",
+    "context": "Reserved Width",
+    "reference": "",
+    "comment": "island settings: reserved strip width slider"
+  },
+  {
     "term": "Reset",
     "translation": "",
     "context": "Reset",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Reset Last Region",
+    "translation": "",
+    "context": "Reset Last Region",
     "reference": "",
     "comment": ""
   },
@@ -16086,6 +18277,13 @@
     "comment": ""
   },
   {
+    "term": "Retry",
+    "translation": "",
+    "context": "Retry",
+    "reference": "",
+    "comment": "retry failed action button"
+  },
+  {
     "term": "Reveal the arcs where surfaces meet the frame",
     "translation": "",
     "context": "Reveal the arcs where surfaces meet the frame",
@@ -16139,7 +18337,7 @@
     "translation": "",
     "context": "Right",
     "reference": "",
-    "comment": "island settings: battery or control center slot right of the clock | island settings: media or launcher slot right of the clock | island settings: weather slot right of the clock | screen edge position"
+    "comment": "screen edge position"
   },
   {
     "term": "Right Center",
@@ -16147,6 +18345,20 @@
     "context": "Right Center",
     "reference": "",
     "comment": "screen position option"
+  },
+  {
+    "term": "Right Click",
+    "translation": "",
+    "context": "Right Click",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Right Click Action",
+    "translation": "",
+    "context": "Right Click Action",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Right Section",
@@ -16212,11 +18424,53 @@
     "comment": ""
   },
   {
+    "term": "Rosé Pine",
+    "translation": "",
+    "context": "Rosé Pine",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Rotate L",
+    "translation": "",
+    "context": "Rotate L",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Rotate R",
+    "translation": "",
+    "context": "Rotate R",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Round Highlighter Tips",
+    "translation": "",
+    "context": "Round Highlighter Tips",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Round Rectangle Corners",
+    "translation": "",
+    "context": "Round Rectangle Corners",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Rounded",
     "translation": "",
     "context": "Rounded",
     "reference": "",
     "comment": "bar corner style option"
+  },
+  {
+    "term": "Rounded Rectangle",
+    "translation": "",
+    "context": "Rounded Rectangle",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Rounded corners for windows",
@@ -16415,11 +18669,32 @@
     "comment": "save and start hotspot action"
   },
   {
+    "term": "Save (Ctrl+S) | Save As (Ctrl+Shift+S)",
+    "translation": "",
+    "context": "Save (Ctrl+S) | Save As (Ctrl+Shift+S)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Save Directory",
+    "translation": "",
+    "context": "Save Directory",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Save Extracted Theme",
     "translation": "",
     "context": "Save Extracted Theme",
     "reference": "",
     "comment": "extract theme save dialog title"
+  },
+  {
+    "term": "Save Filename Pattern",
+    "translation": "",
+    "context": "Save Filename Pattern",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Save Notepad File",
@@ -16432,6 +18707,13 @@
     "term": "Save QR Code",
     "translation": "",
     "context": "Save QR Code",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Save Screenshot As",
+    "translation": "",
+    "context": "Save Screenshot As",
     "reference": "",
     "comment": ""
   },
@@ -16506,6 +18788,13 @@
     "comment": ""
   },
   {
+    "term": "Saved %1 (%2)",
+    "translation": "",
+    "context": "Saved %1 (%2)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Saved Configurations",
     "translation": "",
     "context": "Saved Configurations",
@@ -16530,6 +18819,13 @@
     "term": "Saved item deleted",
     "translation": "",
     "context": "Saved item deleted",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Saving",
+    "translation": "",
+    "context": "Saving",
     "reference": "",
     "comment": ""
   },
@@ -16562,6 +18858,13 @@
     "comment": ""
   },
   {
+    "term": "Scale Editor to Screenshot Size",
+    "translation": "",
+    "context": "Scale Editor to Screenshot Size",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Scale all font sizes throughout the shell",
     "translation": "",
     "context": "Scale all font sizes throughout the shell",
@@ -16572,6 +18875,13 @@
     "term": "Scan",
     "translation": "",
     "context": "Scan",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Scan QR",
+    "translation": "",
+    "context": "Scan QR",
     "reference": "",
     "comment": ""
   },
@@ -16597,6 +18907,13 @@
     "comment": ""
   },
   {
+    "term": "Screen",
+    "translation": "",
+    "context": "Screen",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Screen Edges",
     "translation": "",
     "context": "Screen Edges",
@@ -16604,9 +18921,142 @@
     "comment": "island settings: satellites sit at screen edges"
   },
   {
+    "term": "Screen Recorder",
+    "translation": "",
+    "context": "Screen Recorder",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screen Recording (%1)",
+    "translation": "",
+    "context": "Screen Recording (%1)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screen Recording Error",
+    "translation": "",
+    "context": "Screen Recording Error",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screen Recording Saved",
+    "translation": "",
+    "context": "Screen Recording Saved",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screen recording timed out or was cancelled.",
+    "translation": "",
+    "context": "Screen recording timed out or was cancelled.",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Screen sharing",
     "translation": "",
     "context": "Screen sharing",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screen: %1 (%2x%3)",
+    "translation": "",
+    "context": "Screen: %1 (%2x%3)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot (%1) — %2",
+    "translation": "",
+    "context": "Screenshot (%1) — %2",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot Copied",
+    "translation": "",
+    "context": "Screenshot Copied",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot Folder",
+    "translation": "",
+    "context": "Screenshot Folder",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot Saved",
+    "translation": "",
+    "context": "Screenshot Saved",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot copied anonymously with randomized name and stripped metadata.",
+    "translation": "",
+    "context": "Screenshot copied anonymously with randomized name and stripped metadata.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot copied to clipboard and saved to %1",
+    "translation": "",
+    "context": "Screenshot copied to clipboard and saved to %1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot copied to clipboard but failed to save file: %1",
+    "translation": "",
+    "context": "Screenshot copied to clipboard but failed to save file: %1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot copied to clipboard.",
+    "translation": "",
+    "context": "Screenshot copied to clipboard.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot copied with randomized name.",
+    "translation": "",
+    "context": "Screenshot copied with randomized name.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot failed (mode: %1).",
+    "translation": "",
+    "context": "Screenshot failed (mode: %1).",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot saved",
+    "translation": "",
+    "context": "Screenshot saved",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot saved to %1",
+    "translation": "",
+    "context": "Screenshot saved to %1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Screenshot saved to %1/%2",
+    "translation": "",
+    "context": "Screenshot saved to %1/%2",
     "reference": "",
     "comment": ""
   },
@@ -16639,6 +19089,13 @@
     "comment": ""
   },
   {
+    "term": "Scroll Interval",
+    "translation": "",
+    "context": "Scroll Interval",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Scroll Method",
     "translation": "",
     "context": "Scroll Method",
@@ -16649,6 +19106,13 @@
     "term": "Scroll Wheel",
     "translation": "",
     "context": "Scroll Wheel",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Scroll capture: select a region, scroll content, then press Enter to finish.",
+    "translation": "",
+    "context": "Scroll capture: select a region, scroll content, then press Enter to finish.",
     "reference": "",
     "comment": ""
   },
@@ -16677,6 +19141,13 @@
     "term": "Scrolling",
     "translation": "",
     "context": "Scrolling",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Scrolling Capture",
+    "translation": "",
+    "context": "Scrolling Capture",
     "reference": "",
     "comment": ""
   },
@@ -16835,13 +19306,6 @@
     "comment": ""
   },
   {
-    "term": "Security & privacy",
-    "translation": "",
-    "context": "Security & privacy",
-    "reference": "",
-    "comment": "greeter feature card description"
-  },
-  {
     "term": "Security Key PAM Source",
     "translation": "",
     "context": "Security Key PAM Source",
@@ -16898,6 +19362,13 @@
     "comment": ""
   },
   {
+    "term": "Select / Move stroke",
+    "translation": "",
+    "context": "Select / Move stroke",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Select Application",
     "translation": "",
     "context": "Select Application",
@@ -16912,11 +19383,32 @@
     "comment": ""
   },
   {
+    "term": "Select Color Slots 1 - 4",
+    "translation": "",
+    "context": "Select Color Slots 1 - 4",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Select Color Slots 5 - 8 (Q, W, E, R)",
+    "translation": "",
+    "context": "Select Color Slots 5 - 8 (Q, W, E, R)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Select Custom Theme",
     "translation": "",
     "context": "Select Custom Theme",
     "reference": "",
     "comment": "custom theme file browser title"
+  },
+  {
+    "term": "Select Directory",
+    "translation": "",
+    "context": "Select Directory",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Select Dock Launcher Logo",
@@ -16926,11 +19418,32 @@
     "comment": ""
   },
   {
+    "term": "Select File",
+    "translation": "",
+    "context": "Select File",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Select File to Send",
     "translation": "",
     "context": "Select File to Send",
     "reference": "",
     "comment": "KDE Connect file browser title"
+  },
+  {
+    "term": "Select Image File",
+    "translation": "",
+    "context": "Select Image File",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Select Image to Annotate",
+    "translation": "",
+    "context": "Select Image to Annotate",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Select Launcher Logo",
@@ -17108,6 +19621,13 @@
     "comment": ""
   },
   {
+    "term": "Select which color is extracted from the wallpaper to seed the palette",
+    "translation": "",
+    "context": "Select which color is extracted from the wallpaper to seed the palette",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Select which keybind providers to include",
     "translation": "",
     "context": "Select which keybind providers to include",
@@ -17125,6 +19645,13 @@
     "term": "Select...",
     "translation": "",
     "context": "Select...",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Selected Tool / Action",
+    "translation": "",
+    "context": "Selected Tool / Action",
     "reference": "",
     "comment": ""
   },
@@ -17423,6 +19950,13 @@
     "comment": ""
   },
   {
+    "term": "Shapes",
+    "translation": "",
+    "context": "Shapes",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Share",
     "translation": "",
     "context": "Share",
@@ -17479,6 +20013,13 @@
     "comment": ""
   },
   {
+    "term": "Shortcut Action",
+    "translation": "",
+    "context": "Shortcut Action",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Shortcut that opens this settings window",
     "translation": "",
     "context": "Shortcut that opens this settings window",
@@ -17504,7 +20045,7 @@
     "translation": "",
     "context": "Show",
     "reference": "",
-    "comment": ""
+    "comment": "island settings: show home group"
   },
   {
     "term": "Show \"config reloaded\" Toast",
@@ -17539,7 +20080,7 @@
     "translation": "",
     "context": "Show Badge",
     "reference": "",
-    "comment": "island settings: unread notification count on the home face"
+    "comment": ""
   },
   {
     "term": "Show CPU",
@@ -17563,11 +20104,32 @@
     "comment": ""
   },
   {
+    "term": "Show Charge Rate",
+    "translation": "",
+    "context": "Show Charge Rate",
+    "reference": "",
+    "comment": "Battery bar widget setting: show how many watts are going into the battery while charging"
+  },
+  {
+    "term": "Show Control Center",
+    "translation": "",
+    "context": "Show Control Center",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Show Date",
     "translation": "",
     "context": "Show Date",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Show Discharge Rate",
+    "translation": "",
+    "context": "Show Discharge Rate",
+    "reference": "",
+    "comment": "Battery bar widget setting: show how many watts the system is drawing from the battery"
   },
   {
     "term": "Show Disk",
@@ -17582,6 +20144,13 @@
     "context": "Show Dock",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Show Dock Over Fullscreen",
+    "translation": "",
+    "context": "Show Dock Over Fullscreen",
+    "reference": "",
+    "comment": "dock visibility toggle"
   },
   {
     "term": "Show Feels Like Temperature",
@@ -17657,6 +20226,13 @@
     "term": "Show Icon",
     "translation": "",
     "context": "Show Icon",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Show Keyboard Shortcut Hints",
+    "translation": "",
+    "context": "Show Keyboard Shortcut Hints",
     "reference": "",
     "comment": ""
   },
@@ -17787,6 +20363,13 @@
     "comment": ""
   },
   {
+    "term": "Show Pill Border",
+    "translation": "",
+    "context": "Show Pill Border",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Show Power Actions",
     "translation": "",
     "context": "Show Power Actions",
@@ -17829,6 +20412,20 @@
     "comment": ""
   },
   {
+    "term": "Show Recent Edits History",
+    "translation": "",
+    "context": "Show Recent Edits History",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Show Region Border",
+    "translation": "",
+    "context": "Show Region Border",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Show Remaining Time",
     "translation": "",
     "context": "Show Remaining Time",
@@ -17853,6 +20450,13 @@
     "term": "Show Saved Items",
     "translation": "",
     "context": "Show Saved Items",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Show Screenshot Border",
+    "translation": "",
+    "context": "Show Screenshot Border",
     "reference": "",
     "comment": ""
   },
@@ -17920,6 +20524,20 @@
     "comment": "Enable system time display on the lock screen window"
   },
   {
+    "term": "Show Toolbar",
+    "translation": "",
+    "context": "Show Toolbar",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Show Toolbar Border",
+    "translation": "",
+    "context": "Show Toolbar Border",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Show Top Processes",
     "translation": "",
     "context": "Show Top Processes",
@@ -17930,6 +20548,13 @@
     "term": "Show Trash in Dock",
     "translation": "",
     "context": "Show Trash in Dock",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Show Virtual Devices",
+    "translation": "",
+    "context": "Show Virtual Devices",
     "reference": "",
     "comment": ""
   },
@@ -18165,6 +20790,13 @@
     "comment": ""
   },
   {
+    "term": "Show only the image on a transparent background",
+    "translation": "",
+    "context": "Show only the image on a transparent background",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Show the bar only when no windows are open",
     "translation": "",
     "context": "Show the bar only when no windows are open",
@@ -18182,6 +20814,13 @@
     "term": "Show weather information in top bar and control center",
     "translation": "",
     "context": "Show weather information in top bar and control center",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Show weather on the login screen",
+    "translation": "",
+    "context": "Show weather on the login screen",
     "reference": "",
     "comment": ""
   },
@@ -18326,6 +20965,13 @@
     "comment": "greeter skip button"
   },
   {
+    "term": "Skip Confirmation",
+    "translation": "",
+    "context": "Skip Confirmation",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Skip confirmation",
     "translation": "",
     "context": "Skip confirmation",
@@ -18350,6 +20996,62 @@
     "term": "Slideout",
     "translation": "",
     "context": "Slideout",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 1",
+    "translation": "",
+    "context": "Slot 1",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 2",
+    "translation": "",
+    "context": "Slot 2",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 3",
+    "translation": "",
+    "context": "Slot 3",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 4",
+    "translation": "",
+    "context": "Slot 4",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 5",
+    "translation": "",
+    "context": "Slot 5",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 6",
+    "translation": "",
+    "context": "Slot 6",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 7",
+    "translation": "",
+    "context": "Slot 7",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Slot 8",
+    "translation": "",
+    "context": "Slot 8",
     "reference": "",
     "comment": ""
   },
@@ -18417,6 +21119,13 @@
     "comment": ""
   },
   {
+    "term": "Soften image details so screenshot content stands out",
+    "translation": "",
+    "context": "Soften image details so screenshot content stands out",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Solid",
     "translation": "",
     "context": "Solid",
@@ -18424,9 +21133,30 @@
     "comment": "island settings: filled battery meter style"
   },
   {
-    "term": "Solid material type or Outline",
+    "term": "Solid Color",
     "translation": "",
-    "context": "Solid material type or Outline",
+    "context": "Solid Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Solid Fill",
+    "translation": "",
+    "context": "Solid Fill",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Solid Line",
+    "translation": "",
+    "context": "Solid Line",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Solid or outlined material meter, or a circular gauge",
+    "translation": "",
+    "context": "Solid or outlined material meter, or a circular gauge",
     "reference": "",
     "comment": "island settings: battery style description"
   },
@@ -18487,6 +21217,13 @@
     "comment": ""
   },
   {
+    "term": "Source Color",
+    "translation": "",
+    "context": "Source Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Source: %1",
     "translation": "",
     "context": "Source: %1",
@@ -18543,9 +21280,23 @@
     "comment": ""
   },
   {
+    "term": "Spawn Position",
+    "translation": "",
+    "context": "Spawn Position",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Speaker settings",
     "translation": "",
     "context": "Speaker settings",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Specific Output",
+    "translation": "",
+    "context": "Specific Output",
     "reference": "",
     "comment": ""
   },
@@ -18571,6 +21322,13 @@
     "comment": ""
   },
   {
+    "term": "Spotlight (D)",
+    "translation": "",
+    "context": "Spotlight (D)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Spotlight Bar",
     "translation": "",
     "context": "Spotlight Bar",
@@ -18581,6 +21339,13 @@
     "term": "Spotlight Bar Shortcut",
     "translation": "",
     "context": "Spotlight Bar Shortcut",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Spotlight Opacity",
+    "translation": "",
+    "context": "Spotlight Opacity",
     "reference": "",
     "comment": ""
   },
@@ -18655,6 +21420,48 @@
     "comment": "island settings: overlay layer description"
   },
   {
+    "term": "Stamp (A)",
+    "translation": "",
+    "context": "Stamp (A)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Stamp Color",
+    "translation": "",
+    "context": "Stamp Color",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Stamp Contrast Ring",
+    "translation": "",
+    "context": "Stamp Contrast Ring",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Stamp Number Font",
+    "translation": "",
+    "context": "Stamp Number Font",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Stamp Size",
+    "translation": "",
+    "context": "Stamp Size",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Stamp, Highlighter, Spotlight (A, S, D)",
+    "translation": "",
+    "context": "Stamp, Highlighter, Spotlight (A, S, D)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Standard",
     "translation": "",
     "context": "Standard",
@@ -18669,13 +21476,6 @@
     "comment": "hotspot start confirmation action | start hotspot action"
   },
   {
-    "term": "Start DankConnect, KDE Connect, or Valent to use this plugin",
-    "translation": "",
-    "context": "Start DankConnect, KDE Connect, or Valent to use this plugin",
-    "reference": "",
-    "comment": "Phone Connect daemon hint"
-  },
-  {
     "term": "Start Hotspot?",
     "translation": "",
     "context": "Start Hotspot?",
@@ -18683,9 +21483,37 @@
     "comment": "hotspot start confirmation title"
   },
   {
+    "term": "Start KDE Connect or Valent to use this plugin",
+    "translation": "",
+    "context": "Start KDE Connect or Valent to use this plugin",
+    "reference": "",
+    "comment": "Phone Connect daemon hint"
+  },
+  {
     "term": "Start typing your notes here...",
     "translation": "",
     "context": "Start typing your notes here...",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Starting Preset",
+    "translation": "",
+    "context": "Starting Preset",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Starting Tool",
+    "translation": "",
+    "context": "Starting Tool",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Starting Tool Mode",
+    "translation": "",
+    "context": "Starting Tool Mode",
     "reference": "",
     "comment": ""
   },
@@ -18732,6 +21560,13 @@
     "comment": "stop hotspot action"
   },
   {
+    "term": "Stop & Save",
+    "translation": "",
+    "context": "Stop & Save",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Stop ignoring %1",
     "translation": "",
     "context": "Stop ignoring %1",
@@ -18756,6 +21591,20 @@
     "term": "Stopping",
     "translation": "",
     "context": "Stopping",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Straight Line",
+    "translation": "",
+    "context": "Straight Line",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Straight Line (2)",
+    "translation": "",
+    "context": "Straight Line (2)",
     "reference": "",
     "comment": ""
   },
@@ -18884,6 +21733,13 @@
     "context": "Surface Container",
     "reference": "",
     "comment": "widget background color option | workspace color option"
+  },
+  {
+    "term": "Surface Container Highest",
+    "translation": "",
+    "context": "Surface Container Highest",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Surface High",
@@ -19019,9 +21875,23 @@
     "comment": ""
   },
   {
+    "term": "Switch to Select Tool",
+    "translation": "",
+    "context": "Switch to Select Tool",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Switch to power profile",
     "translation": "",
     "context": "Switch to power profile",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Switch to your custom preset",
+    "translation": "",
+    "context": "Switch to your custom preset",
     "reference": "",
     "comment": ""
   },
@@ -19117,6 +21987,13 @@
     "comment": ""
   },
   {
+    "term": "Synthwave Electric",
+    "translation": "",
+    "context": "Synthwave Electric",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "System",
     "translation": "",
     "context": "System",
@@ -19127,6 +22004,13 @@
     "term": "System App Theming",
     "translation": "",
     "context": "System App Theming",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "System Audio Device",
+    "translation": "",
+    "context": "System Audio Device",
     "reference": "",
     "comment": ""
   },
@@ -19320,6 +22204,20 @@
     "comment": ""
   },
   {
+    "term": "Target Output Name",
+    "translation": "",
+    "context": "Target Output Name",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Task list used when adding tasks from the dash calendar",
+    "translation": "",
+    "context": "Task list used when adding tasks from the dash calendar",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Terminal",
     "translation": "",
     "context": "Terminal",
@@ -19418,6 +22316,20 @@
     "comment": "KDE Connect share text button | text color"
   },
   {
+    "term": "Text (W)",
+    "translation": "",
+    "context": "Text (W)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Text Background Roundness",
+    "translation": "",
+    "context": "Text Background Roundness",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Text Color",
     "translation": "",
     "context": "Text Color",
@@ -19432,9 +22344,30 @@
     "comment": "Text Editor"
   },
   {
+    "term": "Text Font",
+    "translation": "",
+    "context": "Text Font",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Text Note",
+    "translation": "",
+    "context": "Text Note",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Text Rendering",
     "translation": "",
     "context": "Text Rendering",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Text Size",
+    "translation": "",
+    "context": "Text Size",
     "reference": "",
     "comment": ""
   },
@@ -19446,9 +22379,9 @@
     "comment": ""
   },
   {
-    "term": "The Island anchors to the top or bottom edge",
+    "term": "The Island anchors to one screen edge",
     "translation": "",
-    "context": "The Island anchors to the top or bottom edge",
+    "context": "The Island anchors to one screen edge",
     "reference": "",
     "comment": ""
   },
@@ -19481,6 +22414,13 @@
     "comment": ""
   },
   {
+    "term": "The greeter bundled with DMS is active (archinstall setup). It keeps working as is, but syncing theme and settings needs the standalone greeter. Install greetd-dms-greeter-bin from the AUR, then run Sync to migrate the login screen.",
+    "translation": "",
+    "context": "The greeter bundled with DMS is active (archinstall setup). It keeps working as is, but syncing theme and settings needs the standalone greeter. Install greetd-dms-greeter-bin from the AUR, then run Sync to migrate the login screen.",
+    "reference": "",
+    "comment": "embedded greeter status"
+  },
+  {
     "term": "The island draws its own surface",
     "translation": "",
     "context": "The island draws its own surface",
@@ -19509,6 +22449,13 @@
     "comment": "Warning shown when a trusted VPN server certificate no longer matches"
   },
   {
+    "term": "Theme",
+    "translation": "",
+    "context": "Theme",
+    "reference": "",
+    "comment": "battery settings: theme accent indicator colors"
+  },
+  {
     "term": "Theme & Colors",
     "translation": "",
     "context": "Theme & Colors",
@@ -19523,11 +22470,11 @@
     "comment": ""
   },
   {
-    "term": "Theme Registry",
+    "term": "Theme Primary Color",
     "translation": "",
-    "context": "Theme Registry",
+    "context": "Theme Primary Color",
     "reference": "",
-    "comment": "greeter feature card title"
+    "comment": ""
   },
   {
     "term": "Theme color used for the border",
@@ -19642,6 +22589,13 @@
     "comment": ""
   },
   {
+    "term": "This palette preset is read-only. Select one of the options below to switch to the Custom Palette and edit colors:",
+    "translation": "",
+    "context": "This palette preset is read-only. Select one of the options below to switch to the Custom Palette and edit colors:",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "This plugin does not have 'settings_write' permission.\n\nAdd \"permissions\": [\"settings_read\", \"settings_write\"] to plugin.json",
     "translation": "",
     "context": "This plugin does not have 'settings_write' permission.\n\nAdd \"permissions\": [\"settings_read\", \"settings_write\"] to plugin.json",
@@ -19661,6 +22615,13 @@
     "context": "This will delete all unpinned entries. %1 pinned entries will be kept.",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "This will delete the %1 entries matching the current filter. Pinned entries are kept.",
+    "translation": "",
+    "context": "This will delete the %1 entries matching the current filter. Pinned entries are kept.",
+    "reference": "",
+    "comment": "clipboard modal: clear confirmation while a search filter is active, %1 is the number of matching entries"
   },
   {
     "term": "This will disconnect WiFi from \"%1\" — the radio can't host a hotspot and stay connected at the same time. Internet sharing will need another connection, such as Ethernet.",
@@ -19744,7 +22705,7 @@
     "translation": "",
     "context": "Time",
     "reference": "",
-    "comment": "theme auto mode tab | wallpaper cycling mode tab"
+    "comment": "island settings: clock shows time only | theme auto mode tab | wallpaper cycling mode tab"
   },
   {
     "term": "Time & Date Locale",
@@ -19915,9 +22876,30 @@
     "comment": "notification history filter"
   },
   {
+    "term": "Toggle Hide/Show Annotations",
+    "translation": "",
+    "context": "Toggle Hide/Show Annotations",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Toggle Start / Stop",
+    "translation": "",
+    "context": "Toggle Start / Stop",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Toggle bar visibility manually via IPC",
     "translation": "",
     "context": "Toggle bar visibility manually via IPC",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Toggle between 2 latest presets",
+    "translation": "",
+    "context": "Toggle between 2 latest presets",
     "reference": "",
     "comment": ""
   },
@@ -19946,6 +22928,13 @@
     "term": "Toggling...",
     "translation": "",
     "context": "Toggling...",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Tokyo Night",
+    "translation": "",
+    "context": "Tokyo Night",
     "reference": "",
     "comment": ""
   },
@@ -19981,6 +22970,34 @@
     "term": "Too many attempts - locked out",
     "translation": "",
     "context": "Too many attempts - locked out",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Tool Defaults",
+    "translation": "",
+    "context": "Tool Defaults",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Toolbar",
+    "translation": "",
+    "context": "Toolbar",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Toolbar Palette",
+    "translation": "",
+    "context": "Toolbar Palette",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Toolbar Position",
+    "translation": "",
+    "context": "Toolbar Position",
     "reference": "",
     "comment": ""
   },
@@ -20097,6 +23114,13 @@
     "comment": ""
   },
   {
+    "term": "Transition Duration",
+    "translation": "",
+    "context": "Transition Duration",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Transition Effect",
     "translation": "",
     "context": "Transition Effect",
@@ -20107,6 +23131,20 @@
     "term": "Transparency",
     "translation": "",
     "context": "Transparency",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Transparent",
+    "translation": "",
+    "context": "Transparent",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Transparent Background",
+    "translation": "",
+    "context": "Transparent Background",
     "reference": "",
     "comment": ""
   },
@@ -20153,9 +23191,30 @@
     "comment": ""
   },
   {
+    "term": "Trigger Middle-Click Action (Default: Interactive Region)",
+    "translation": "",
+    "context": "Trigger Middle-Click Action (Default: Interactive Region)",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Trigger Prefix",
     "translation": "",
     "context": "Trigger Prefix",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Trigger Right-Click Action (Default: Clipboard Annotate)",
+    "translation": "",
+    "context": "Trigger Right-Click Action (Default: Clipboard Annotate)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Trigger on Hover",
+    "translation": "",
+    "context": "Trigger on Hover",
     "reference": "",
     "comment": ""
   },
@@ -20258,6 +23317,13 @@
     "comment": ""
   },
   {
+    "term": "Type note...",
+    "translation": "",
+    "context": "Type note...",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Type this prefix to search keybinds",
     "translation": "",
     "context": "Type this prefix to search keybinds",
@@ -20307,6 +23373,20 @@
     "comment": "plugin browser category filter"
   },
   {
+    "term": "Undo (Ctrl+Z)",
+    "translation": "",
+    "context": "Undo (Ctrl+Z)",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Undo last stroke",
+    "translation": "",
+    "context": "Undo last stroke",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Unfocused Color",
     "translation": "",
     "context": "Unfocused Color",
@@ -20326,13 +23406,6 @@
     "context": "Ungrouped",
     "reference": "",
     "comment": ""
-  },
-  {
-    "term": "Uninstall",
-    "translation": "",
-    "context": "Uninstall",
-    "reference": "",
-    "comment": "uninstall action button"
   },
   {
     "term": "Uninstall Plugin",
@@ -20381,7 +23454,7 @@
     "translation": "",
     "context": "Unknown Artist",
     "reference": "",
-    "comment": "island media face: fallback artist | island media player: fallback artist"
+    "comment": "island media face: fallback artist"
   },
   {
     "term": "Unknown Config",
@@ -20437,7 +23510,7 @@
     "translation": "",
     "context": "Unknown Track",
     "reference": "",
-    "comment": "island media face: fallback title | island media player: fallback title"
+    "comment": "island media face: fallback title"
   },
   {
     "term": "Unload on Close",
@@ -20643,6 +23716,13 @@
     "comment": ""
   },
   {
+    "term": "Usage Guide",
+    "translation": "",
+    "context": "Usage Guide",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Usage Tips",
     "translation": "",
     "context": "Usage Tips",
@@ -20660,6 +23740,20 @@
     "term": "Use Custom Command",
     "translation": "",
     "context": "Use Custom Command",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Use Existing Custom",
+    "translation": "",
+    "context": "Use Existing Custom",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Use Floating Editor",
+    "translation": "",
+    "context": "Use Floating Editor",
     "reference": "",
     "comment": ""
   },
@@ -20702,6 +23796,13 @@
     "term": "Use Inline Expansion",
     "translation": "",
     "context": "Use Inline Expansion",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Use Modal Editor",
+    "translation": "",
+    "context": "Use Modal Editor",
     "reference": "",
     "comment": ""
   },
@@ -21154,6 +24255,13 @@
     "comment": ""
   },
   {
+    "term": "Vertical",
+    "translation": "",
+    "context": "Vertical",
+    "reference": "",
+    "comment": "lock screen clock style option"
+  },
+  {
     "term": "Vertical Deck",
     "translation": "",
     "context": "Vertical Deck",
@@ -21166,6 +24274,13 @@
     "context": "Vertical Grid",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Vertical Offset",
+    "translation": "",
+    "context": "Vertical Offset",
+    "reference": "",
+    "comment": "island settings: vertical offset slider"
   },
   {
     "term": "Vertical Scrolling",
@@ -21203,6 +24318,13 @@
     "comment": ""
   },
   {
+    "term": "Video Codec",
+    "translation": "",
+    "context": "Video Codec",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Video Path",
     "translation": "",
     "context": "Video Path",
@@ -21217,9 +24339,23 @@
     "comment": "Video Player"
   },
   {
+    "term": "Video Quality",
+    "translation": "",
+    "context": "Video Quality",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Video Screensaver",
     "translation": "",
     "context": "Video Screensaver",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Video Settings",
+    "translation": "",
+    "context": "Video Settings",
     "reference": "",
     "comment": ""
   },
@@ -21270,7 +24406,7 @@
     "translation": "",
     "context": "Volume",
     "reference": "",
-    "comment": "island system face: volume title"
+    "comment": "island settings: volume slot row | island system face: volume title"
   },
   {
     "term": "Volume Changed",
@@ -21285,6 +24421,13 @@
     "context": "Volume Slider",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Volume Style",
+    "translation": "",
+    "context": "Volume Style",
+    "reference": "",
+    "comment": "island settings: volume display mode row"
   },
   {
     "term": "Volume, brightness, and other system OSDs",
@@ -21392,6 +24535,34 @@
     "comment": "greeter doctor page status card"
   },
   {
+    "term": "Watermark",
+    "translation": "",
+    "context": "Watermark",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Watermark Image",
+    "translation": "",
+    "context": "Watermark Image",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Watermark Text",
+    "translation": "",
+    "context": "Watermark Text",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Watermark Type",
+    "translation": "",
+    "context": "Watermark Type",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Wave Progress Bars",
     "translation": "",
     "context": "Wave Progress Bars",
@@ -21403,7 +24574,7 @@
     "translation": "",
     "context": "Weather",
     "reference": "",
-    "comment": "island compact face: weather label | island settings: weather slot row"
+    "comment": "Enable weather display on the lock screen window | Enable weather display on the login screen | island compact face: weather label | island settings: weather slot row"
   },
   {
     "term": "Weather Widget",
@@ -21425,6 +24596,13 @@
     "context": "Web Browser",
     "reference": "",
     "comment": "Web Browser"
+  },
+  {
+    "term": "WebP Quality",
+    "translation": "",
+    "context": "WebP Quality",
+    "reference": "",
+    "comment": ""
   },
   {
     "term": "Welcome",
@@ -21458,6 +24636,13 @@
     "term": "When enabled, checks updates on startup. When disabled, only the interval above or a manual refresh runs a check.",
     "translation": "",
     "context": "When enabled, checks updates on startup. When disabled, only the interval above or a manual refresh runs a check.",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "When enabled, the editor shrinks to match the captured region instead of filling 90% of the screen.",
+    "translation": "",
+    "context": "When enabled, the editor shrinks to match the captured region instead of filling 90% of the screen.",
     "reference": "",
     "comment": ""
   },
@@ -21707,6 +24892,20 @@
     "comment": ""
   },
   {
+    "term": "Window",
+    "translation": "",
+    "context": "Window",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "Window / Portal",
+    "translation": "",
+    "context": "Window / Portal",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "Window Corner Radius",
     "translation": "",
     "context": "Window Corner Radius",
@@ -21774,7 +24973,21 @@
     "translation": "",
     "context": "Workspace",
     "reference": "",
-    "comment": ""
+    "comment": "fallback label when workspace has no number or name"
+  },
+  {
+    "term": "Workspace %1",
+    "translation": "",
+    "context": "Workspace %1",
+    "reference": "",
+    "comment": "workspace switch OSD, %1 is workspace number"
+  },
+  {
+    "term": "Workspace %1: %2",
+    "translation": "",
+    "context": "Workspace %1: %2",
+    "reference": "",
+    "comment": "workspace switch OSD, %1 is workspace number, %2 is workspace name"
   },
   {
     "term": "Workspace Index Numbers",
@@ -21796,6 +25009,13 @@
     "context": "Workspace Padding",
     "reference": "",
     "comment": ""
+  },
+  {
+    "term": "Workspace Switch",
+    "translation": "",
+    "context": "Workspace Switch",
+    "reference": "",
+    "comment": "toggle label for workspace change OSD"
   },
   {
     "term": "Workspace Switcher",
@@ -21980,6 +25200,13 @@
     "comment": ""
   },
   {
+    "term": "Zoom Level",
+    "translation": "",
+    "context": "Zoom Level",
+    "reference": "",
+    "comment": ""
+  },
+  {
     "term": "admin",
     "translation": "",
     "context": "admin",
@@ -21992,13 +25219,6 @@
     "context": "attached",
     "reference": "",
     "comment": ""
-  },
-  {
-    "term": "below AA",
-    "translation": "",
-    "context": "below AA",
-    "reference": "",
-    "comment": "contrast level below the AA threshold"
   },
   {
     "term": "brandon",
@@ -22099,6 +25319,13 @@
     "comment": "plugin discussion link"
   },
   {
+    "term": "dms-greeter is not installed. Install the dms-greeter package to manage the greeter.",
+    "translation": "",
+    "context": "dms-greeter is not installed. Install the dms-greeter package to manage the greeter.",
+    "reference": "",
+    "comment": "greeter status placeholder"
+  },
+  {
     "term": "e.g. /usr/bin/my-script --flag",
     "translation": "",
     "context": "e.g. /usr/bin/my-script --flag",
@@ -22165,6 +25392,13 @@
     "term": "featured",
     "translation": "",
     "context": "featured",
+    "reference": "",
+    "comment": ""
+  },
+  {
+    "term": "gpu-screen-recorder is not installed. Please install it first.",
+    "translation": "",
+    "context": "gpu-screen-recorder is not installed. Please install it first.",
     "reference": "",
     "comment": ""
   },
